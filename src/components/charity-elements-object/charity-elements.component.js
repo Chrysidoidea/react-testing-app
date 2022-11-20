@@ -1,15 +1,9 @@
 import './charity-elements-styles.scss';
 
-
-
-
 const CharityElementsComponent = ({charityElements}) => {
     const {title, info, imageURL, logoURL, URL} = charityElements;
-    // console.log(charityElements)
 
     return (
-
-
         <div className="category-container">
             <div className='background-image' style={{
                 backgroundImage: `url(${imageURL})`
@@ -29,4 +23,5 @@ const CharityElementsComponent = ({charityElements}) => {
         </div>
     )
 }
+
 export default CharityElementsComponent;
