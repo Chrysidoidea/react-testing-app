@@ -1,0 +1,13 @@
+.navigation {
+  height: 10vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+
+
+  .logo {
+    height: 6.25rem;
+  }
+}
