@@ -10,7 +10,6 @@ const CharityElementsComponent = ({charityElements}) => {
             }}/>
             <div className="category-body-container">
                 <h2>{title}</h2>
-                {/*<p>{info}</p>*/}
                 <div className='entrance-logo'>
                     <a href={URL} className='phone-media-href'>
                         <p className='phone-media-href'>{info}</p>
