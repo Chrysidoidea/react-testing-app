@@ -22,18 +22,18 @@ const Navigation = () => {
               <div className='navigation-elements'>
 
                 <div className='nav-links-container'>
-                    <Link className='nav-link upper-case' to='/que'>
-                        Glory
+                    <Link className='nav-link upper-case' to='/merch'>
+                        Merch
                     </Link>
                 </div>
 
 
                   <div className='nav-links-container'>
                       {currentUser ? (
-                          <Link className='nav-link upper-case' onClick={signOutUser}>Sign out</Link>
-                          ) : ( <Link className='sign-in upper-case' to='/auth'>
-                          Sign In
-                      </Link>
+                          <div>
+                          <Link className='nav-link upper-case' to='/user-menu'>Settings</Link>
+                          </div>
+                          ) : ( <Link className='sign-in upper-case' to='/auth'>Sign In</Link>
                       )
                   }
                   </div>

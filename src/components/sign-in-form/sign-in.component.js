@@ -2,6 +2,7 @@ import {useState} from "react";
 
 import Button from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
+import AnimationEffectComponent from "../../effects/animation-effect.component";
 
 import {
     createAuthUserWithEmailAndPassword,
@@ -71,6 +72,7 @@ const SignInForm = () => {
 
 
     return (
+        <AnimationEffectComponent>
         <div className='sign-in-container'>
             <h2>Enter account credentials</h2>
             <h1>WELCOME</h1>
@@ -107,6 +109,7 @@ const SignInForm = () => {
 </div>
           </form>
         </div>
+            </AnimationEffectComponent>
     )
 }
 

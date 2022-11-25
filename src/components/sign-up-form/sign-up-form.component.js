@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from "../../utils/firebase/firebase.utils";
+import AnimationEffectComponent from "../../effects/animation-effect.component";
 
 
 import FormInput from "../form-input/form-input.component";
@@ -62,6 +63,7 @@ const SignUpForm = () => {
     }
 
     return (
+        <AnimationEffectComponent>
         <div className='sign-up-container'>
             <h2>Have no account?</h2>
             <h1>DON'T PANIC</h1>
@@ -108,6 +110,7 @@ const SignUpForm = () => {
                 <Button type='submit'>Submit</Button>
             </form>
         </div>
+            </AnimationEffectComponent>
     )
 }
 
