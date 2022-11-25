@@ -6,7 +6,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-
+.upper-case {
+  text-transform: uppercase;
+  font-weight: bold;
+}
 
 .navigation-elements {
   display: flex;
