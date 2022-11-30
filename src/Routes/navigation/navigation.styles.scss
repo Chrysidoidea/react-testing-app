@@ -14,6 +14,7 @@
 .navigation-elements {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 
   a {
     margin: 0 10px;
@@ -23,6 +24,31 @@
     color: #2b382b;
   }
 }
+  .nav-user-settings-container {
+    display: flex;
+    align-items: center;
+
+.card-icon-container {
+  position: relative;
+
+  .merch-icon {
+    width: 45px;
+    height: 45px;
+  }
+  .icon-count {
+    position: absolute;
+    bottom: 10px;
+    left: 16px;
+    user-select: none;
+    color: #55606c;
+    font-weight: bold;
+  }
+}
+
+  }
+
+
+
 
   .logo {
     height: 6.25rem;

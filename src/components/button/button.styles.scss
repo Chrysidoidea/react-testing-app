@@ -34,7 +34,7 @@
     color: white;
 
     &:hover {
-      background-color: transparent;
+      background-color: white;
       color: #2a5fb6;
     }
     &:active {
@@ -45,7 +45,7 @@
   &.inverted {
     background-color: white;
     color: darkslategrey;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
 
     &:hover {
       background-color: darkslategrey;

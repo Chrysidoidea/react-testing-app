@@ -1,7 +1,6 @@
 import './user-menu.component.scss';
-import { signOutUser } from "../../utils/firebase/firebase.utils";
 import AnimationEffectComponent from "../../effects/animation-effect.component";
-import {Link} from "react-router-dom";
+import SignOutButton from "../sign-out/sign-out.component";
 
 
 const UserMenuComponent = () => {
@@ -17,8 +16,9 @@ const UserMenuComponent = () => {
 Hence, Deep Thought made the plans for the supercomputer Earth, that would solve the Question in ten million years. However, five minutes before it was due to be complete, the Vogons, under the orders of Gag Halfrunt, destroyed it to make a hyperspace bypass.
 
 It was later revealed that part of the Earth supercomputer was compromised by the Golgafrinchans, whose arrival wiped out the population of humans on the planet. </span>
-            <Link className='sign-out' onClick={signOutUser} to='/auth'>Sign out</Link>
+            <SignOutButton/>
         </div>
+
        </AnimationEffectComponent>
     )
 }

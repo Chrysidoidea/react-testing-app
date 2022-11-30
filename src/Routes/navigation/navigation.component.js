@@ -1,6 +1,9 @@
 import { Outlet, Link } from "react-router-dom";
 import { Fragment, useContext } from "react";
 
+import CardIcon from "../../components/card-icon/card-icon.component";
+import CardDropdown from "../../components/card-dropdown/card-dropdown.component";
+
 import './navigation.styles.scss';
 
 import { ReactComponent as TreeLogo} from "../../assets/Logo.svg";
@@ -30,15 +33,21 @@ const Navigation = () => {
 
                   <div className='nav-links-container'>
                       {currentUser ? (
-                          <div>
+                          <div className='nav-user-settings-container'>
                           <Link className='nav-link upper-case' to='/user-menu'>Settings</Link>
+                          <CardIcon/>
+
                           </div>
-                          ) : ( <Link className='sign-in upper-case' to='/auth'>Sign In</Link>
+                          ) : (
+                              <div>
+                               <Link className='sign-in upper-case' to='/auth'>Sign In</Link>
+                              </div>
                       )
                   }
                   </div>
 
                 </div>
+                <CardDropdown/>
             </div>
 
             <Outlet/>

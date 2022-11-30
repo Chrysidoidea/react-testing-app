@@ -7,6 +7,7 @@ import App from './App';
 
 import { UserProvider } from "./contexts/user.context";
 import { MerchProvider } from "./contexts/merch.context";
+import { DropdownProvider} from "./contexts/card-dropdown-handler.context";
 
 import './index.css';
 
@@ -16,7 +17,9 @@ root.render(
     <BrowserRouter>
        <UserProvider>
          <MerchProvider>
-          <App />
+             <DropdownProvider>
+                    <App />
+             </DropdownProvider>
          </MerchProvider>
        </UserProvider>
     </BrowserRouter>
