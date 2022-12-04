@@ -13,6 +13,9 @@
   @media (max-width: 700px) {
     min-height: 400vh;
   }
+  @Media (max-width: 350px) {
+    min-height: 600vh;
+  }
 
 
 
@@ -27,6 +30,10 @@
     box-shadow: rgba(38, 38, 38, 0.8) 0 4px 16px, rgb(218, 218, 218) 0 8px 32px;
     transition: 1s;
     opacity: 0.90;
+    @media(max-width: 350px) {
+      min-width: 270px;
+      min-height: 600px;
+    }
 
     &:hover {
       opacity: 1;
@@ -58,6 +65,13 @@
       @Media (max-width: 700px) {
         min-height: 400px;
       }
+      @Media (max-width: 350px) {
+        min-height: 500px;
+        max-width: 200px;
+        justify-content: center;
+        align-items: center;
+
+      }
 
 
 
@@ -73,12 +87,14 @@
       cursor: default;
       user-select: none;
       font-size: 2.5rem;
-
+      @media (max-width: 1900px) {
+          font-size: 1rem;
     }
-    @media (max-width: 1900px) {
-      h2 {
-        font-size: 1rem;
+      @media (max-width: 350px) {
+        font-size: 1.5rem;
+        text-align: center;
       }
+
     }
 
 
@@ -91,6 +107,12 @@
       max-width: 31.25rem;
       min-width: 31.25rem;
       user-select: none;
+      @media (max-width: 350px) {
+        text-align: center;
+        margin: 0.1rem;
+        max-width: 200px;
+        min-width: 200px;
+      }
     }
 
     .entrance-logo {
@@ -98,6 +120,9 @@
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
+      @media(max-width: 350px) {
+        justify-content: center;
+      }
     }
     .logo-image {
       min-height: 8.75rem; max-height: 9.375rem;
