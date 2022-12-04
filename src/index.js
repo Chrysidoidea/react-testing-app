@@ -7,7 +7,7 @@ import App from './App';
 
 import { UserProvider } from "./contexts/user.context";
 import { MerchProvider } from "./contexts/merch.context";
-import { DropdownProvider} from "./contexts/card-dropdown-handler.context";
+import { DropdownProvider} from "./contexts/cart-dropdown-handler.context";
 
 import './index.css';
 

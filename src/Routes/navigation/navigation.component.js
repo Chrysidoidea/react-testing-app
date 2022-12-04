@@ -1,8 +1,8 @@
 import { Outlet, Link } from "react-router-dom";
 import { Fragment, useContext } from "react";
 
-import CardIcon from "../../components/card-icon/card-icon.component";
-import CardDropdown from "../../components/card-dropdown/card-dropdown.component";
+import CardIcon from "../../components/cart-icon/card-icon.component";
+import CardDropdown from "../../components/card-dropdown/cart-dropdown.component";
 
 import './navigation.styles.scss';
 
@@ -36,7 +36,6 @@ const Navigation = () => {
                           <div className='nav-user-settings-container'>
                           <Link className='nav-link upper-case' to='/user-menu'>Settings</Link>
                           <CardIcon/>
-
                           </div>
                           ) : (
                               <div>

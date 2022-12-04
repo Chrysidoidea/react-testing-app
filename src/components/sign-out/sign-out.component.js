@@ -1,6 +1,6 @@
 import {signOutUser } from "../../utils/firebase/firebase.utils";
 import {useContext} from "react";
-import {DropdownContext} from "../../contexts/card-dropdown-handler.context";
+import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
 import {Link} from "react-router-dom";
 
 

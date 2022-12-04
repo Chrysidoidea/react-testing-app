@@ -1,11 +1,15 @@
 .navigation-logo {
-  height: 10vh;
+  height: 13vh;
   width: 100%;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 30px;
+  z-index: 10;
+  background-color: white;
+  position: fixed;
+
 .upper-case {
   text-transform: uppercase;
   font-weight: bold;

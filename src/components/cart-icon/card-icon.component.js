@@ -1,13 +1,14 @@
 import { ReactComponent as MerchIcon } from "../../assets/shopping-bag.svg";
 import {useContext} from "react";
-import {DropdownContext} from "../../contexts/card-dropdown-handler.context";
+import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
 
 
 import './card-icon.styles.scss';
 
-const CardIcon = () => {
+const CartIcon = () => {
 
-        const {setIsActive} = useContext(DropdownContext);
+        const {setIsActive, cartItems} = useContext(DropdownContext);
+
         const changeHandler = () => {
             setIsActive(isActive => !isActive)
         }
@@ -19,9 +20,9 @@ const CardIcon = () => {
             onClick={changeHandler}
         >
             <MerchIcon className='merch-icon'/>
-            <span className='icon-count'>0</span>
+            <span className='icon-count'>{cartItems.length}</span>
         </div>
     )
 };
 
-export default CardIcon;
+export default CartIcon;

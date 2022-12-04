@@ -1,0 +1,47 @@
+.card-dropdown-container {
+  position: fixed;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  right: 40px;
+  top: 100px;
+  border: 2px solid rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  height: 510px;
+  width: 405px;
+  backdrop-filter: blur(25px) brightness(60%);
+  padding: 15px;
+  z-index: 5;
+  transition: visibility .6s, opacity .3s;
+  overflow: scroll;
+}
+.active {
+  visibility: visible;
+  opacity: 1;
+}
+.empty-card-items {
+  display: flex;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 190px;
+  user-select: none;
+  filter: blur(.7px);
+  justify-content: center;
+
+}
+
+.card-items {
+  height: 410px;
+  overflow: scroll;
+  border-radius: 6px;
+}
+
+.cart-button-container {
+  display: flex;
+  position: sticky;
+  top: 100px;
+  justify-content: center;
+
+}

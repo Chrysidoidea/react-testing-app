@@ -8,6 +8,7 @@ const UserMenuComponent = () => {
 
     return (
        <AnimationEffectComponent>
+           <div className='user-menu-container'>
         <div className='user-menu'>
         <h2>Greetings, u have registered in my "Hello World" project</h2>
             <h3>You deserved receive the answer of Ultimate Question</h3>
@@ -18,6 +19,7 @@ Hence, Deep Thought made the plans for the supercomputer Earth, that would solv
 It was later revealed that part of the Earth supercomputer was compromised by the Golgafrinchans, whose arrival wiped out the population of humans on the planet. </span>
             <SignOutButton/>
         </div>
+           </div>
 
        </AnimationEffectComponent>
     )
