@@ -4,10 +4,12 @@
   padding: 10rem 1.5rem 5rem 1.5rem;
   display: grid;
   gap: 1.6rem;
-  grid-template-columns: repeat(2, 1fr);
-  min-height: 300vh;
 
-  @media (max-width: 1915px) {
+  min-height: 300vh;
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 1440px){
     grid-template-columns: repeat(1, 1fr);
   }
   @media (max-width: 700px) {
@@ -30,7 +32,15 @@
     box-shadow: rgba(38, 38, 38, 0.8) 0 4px 16px, rgb(218, 218, 218) 0 8px 32px;
     transition: 1s;
     opacity: 0.90;
-    @media(max-width: 350px) {
+
+    @media(max-width: 1440px) {
+      min-width: 1150px;
+      height: 500px;
+    }
+    @media(max-width: 800px) {
+      min-width: 750px;
+    }
+    @media(max-width: 430px) {
       min-width: 270px;
       min-height: 600px;
     }
@@ -62,12 +72,20 @@
       position: absolute;
       backdrop-filter: blur(10px) brightness(45%);
 
+      @media(max-width: 1440px) {
+        min-width: 890px;
+        height: 300px;
+      }
+      @media(max-width: 800px) {
+        min-width: 650px;
+      }
+
       @Media (max-width: 700px) {
         min-height: 400px;
       }
-      @Media (max-width: 350px) {
+      @Media (max-width: 430px) {
         min-height: 500px;
-        max-width: 200px;
+        max-width: 300px;
         justify-content: center;
         align-items: center;
 
@@ -87,10 +105,8 @@
       cursor: default;
       user-select: none;
       font-size: 2.5rem;
-      @media (max-width: 1900px) {
-          font-size: 1rem;
-    }
-      @media (max-width: 350px) {
+
+      @media (max-width: 430px) {
         font-size: 1.5rem;
         text-align: center;
       }
@@ -107,7 +123,7 @@
       max-width: 31.25rem;
       min-width: 31.25rem;
       user-select: none;
-      @media (max-width: 350px) {
+      @media (max-width: 430px) {
         text-align: center;
         margin: 0.1rem;
         max-width: 200px;
@@ -120,7 +136,7 @@
       flex-direction: row;
       justify-content: space-between;
       width: 100%;
-      @media(max-width: 350px) {
+      @media(max-width: 430px) {
         justify-content: center;
       }
     }
