@@ -5,7 +5,7 @@
   display: grid;
   gap: 1.6rem;
   grid-template-columns: repeat(2, 1fr);
-  height: 200vh;
+  min-height: 300vh;
 
   @media (max-width: 1915px) {
     grid-template-columns: repeat(1, 1fr);
@@ -14,7 +14,7 @@
 
 
   .category-container {
-    min-width: 43.75rem;
+    min-width: 38.75rem;
     background-color: rgba(253, 253, 253, 0.25);
     border-radius: .2rem;
     display: flex;
@@ -51,6 +51,9 @@
       justify-content: flex-start;
       position: absolute;
       backdrop-filter: blur(10px) brightness(45%);
+
+
+
 
     }
 
