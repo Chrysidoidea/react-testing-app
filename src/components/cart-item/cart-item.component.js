@@ -1,7 +1,7 @@
 import './cart-item.styles.scss';
 
 import {useContext} from "react";
-import {decrementHandler, DropdownContext} from "../../contexts/cart-dropdown-handler.context";
+import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
 
 const CartItem = ({cartItem}) => {
     const { name, quantity, id, price } = cartItem;

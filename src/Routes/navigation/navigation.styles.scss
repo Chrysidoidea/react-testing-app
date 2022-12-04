@@ -1,3 +1,8 @@
+.authentication-container {
+  padding-top: 9.375rem;
+}
+
+
 .navigation-logo {
   height: 13vh;
   width: 100%;
@@ -5,7 +10,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px;
+  padding: 1.875rem;
   z-index: 10;
   background-color: white;
   position: fixed;
@@ -21,7 +26,7 @@
   align-items: center;
 
   a {
-    margin: 0 10px;
+    margin: 0 0.625rem;
     transition: .3s;
   }
   a:hover {
@@ -36,13 +41,13 @@
   position: relative;
 
   .merch-icon {
-    width: 45px;
-    height: 45px;
+    width: 2.8125rem;
+    height: 2.8125rem;
   }
   .icon-count {
     position: absolute;
-    bottom: 10px;
-    left: 16px;
+    bottom: 0.625rem;
+    left: 1rem;
     user-select: none;
     color: #55606c;
     font-weight: bold;
@@ -50,9 +55,6 @@
 }
 
   }
-
-
-
 
   .logo {
     height: 6.25rem;

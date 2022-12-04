@@ -7,6 +7,14 @@ const Home = () => {
 
     const charityElements = [
         {
+            id: 5,
+            title: 'Animal Charity Evaluators',
+            URL: 'https://animalcharityevaluators.org/',
+            imageURL: 'http://phenomenalworld.in/wp-content/uploads/2014/04/D-deer-wildlifedearcritteranimalsbandipurforestjunglefreeroama-za2zpravsthroo-da-looking-glass-through-the-looking-glass-bangalore-blog-praveen.jpg',
+            logoURL: 'https://animalcharityevaluators.org/wp-content/uploads/2016/10/ace-about-default-381x200.jpg',
+            info: 'This organization are dedicated to finding and promoting the most effective ways to help animals. Learn more about our mission, vision, and goals as well as our history and organizational philosophy.',
+        },
+        {
             id: 1,
             title: 'Faunalytics',
             URL: 'https://faunalytics.org/',
@@ -50,6 +58,7 @@ const Home = () => {
             logoURL: 'https://new-harvest.org/app/uploads/2021/03/new-harvest-logo-thumbnail-2.png',
             info: 'New Harvest is a nonprofit research institute that supports open, public cultured meat research. Founded in 2004, we are the world’s longest-running organization dedicated to advancing the field of cellular agriculture.',
         },
+
     ]
 
     return (

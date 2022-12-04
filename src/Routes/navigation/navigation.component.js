@@ -9,8 +9,6 @@ import './navigation.styles.scss';
 import { ReactComponent as TreeLogo} from "../../assets/Logo.svg";
 import { UserContext } from "../../contexts/user.context";
 
-import { signOutUser } from "../../utils/firebase/firebase.utils";
-
 const Navigation = () => {
 
     const { currentUser } = useContext(UserContext)
@@ -19,13 +17,13 @@ const Navigation = () => {
     return (
         <Fragment>
             <div className='navigation-logo'>
-                <Link className='logo-container' to='/'>
+                <Link className='logo-container' to='/react-testing-app'>
                 <TreeLogo className='logo'/>
                 </Link>
               <div className='navigation-elements'>
 
                 <div className='nav-links-container'>
-                    <Link className='nav-link upper-case' to='/merch'>
+                    <Link className='nav-link upper-case' to='/react-testing-app/merch'>
                         Merch
                     </Link>
                 </div>
@@ -34,12 +32,12 @@ const Navigation = () => {
                   <div className='nav-links-container'>
                       {currentUser ? (
                           <div className='nav-user-settings-container'>
-                          <Link className='nav-link upper-case' to='/user-menu'>Settings</Link>
+                          <Link className='nav-link upper-case' to='/react-testing-app/user-menu'>Settings</Link>
                           <CardIcon/>
                           </div>
                           ) : (
                               <div>
-                               <Link className='sign-in upper-case' to='/auth'>Sign In</Link>
+                               <Link className='sign-in upper-case' to='/react-testing-app/auth'>Sign In</Link>
                               </div>
                       )
                   }

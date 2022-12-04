@@ -15,7 +15,7 @@ const App = () => {
 
     return (
         <Routes>
-            <Route path='/' element={<Navigation/>}>
+            <Route path='/react-testing-app/' element={<Navigation/>}>
                 <Route index element={<Home/>}/>
                 <Route path='merch' element={<Merch/>}/>
                 <Route path='auth' element={<Authenticaton/>}/>
