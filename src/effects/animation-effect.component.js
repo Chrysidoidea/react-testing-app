@@ -1,8 +1,6 @@
-import { motion } from 'framer-motion';
-
+import {motion} from 'framer-motion';
 
 import React from "react";
-
 
 const animations = {
     initial: {opacity: 0},
@@ -10,12 +8,9 @@ const animations = {
     exit: {opacity: 0}
 }
 
-
 const AnimationEffectComponent = ({children}) => {
 
-
     return (
-
 
         <motion.div
             variants={animations}
@@ -26,8 +21,6 @@ const AnimationEffectComponent = ({children}) => {
         >
             {children}
         </motion.div>
-
-
 
     )
 }

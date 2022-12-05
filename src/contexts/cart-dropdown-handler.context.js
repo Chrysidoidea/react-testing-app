@@ -1,10 +1,10 @@
 import {useState, createContext} from "react";
-//>>>
+
 export const addCartItem = (cartItems, productToAdd) => {
 
     const existingCartItem = cartItems.find((cartItem) => cartItem.id === productToAdd.id)
 
-    if(existingCartItem) {
+    if (existingCartItem) {
         return cartItems.map((cartItem) => {
             return cartItem.id === productToAdd.id
                 ? {...cartItem, price: Number.parseInt(cartItem.price) + 6, quantity: cartItem.quantity + 1}
@@ -12,19 +12,19 @@ export const addCartItem = (cartItems, productToAdd) => {
         })
     }
 
-    return [...cartItems, {...productToAdd, quantity: 1} ];
+    return [...cartItems, {...productToAdd, quantity: 1}];
 };
-
 
 export const decrementHandler = (cartItems, cardId) => {
 
-
-        return cartItems.map((cartItem) => {
-                return cardId.id === cartItem.id
-                    ? {...cartItem, price: Number.parseInt(cartItem.price) - (cartItem.quantity > 1 ? 6:0), quantity: cartItem.quantity - (cartItem.quantity > 1 ? 1:0)}
-                    : cartItem
-            }
-        )
+    return cartItems.map((cartItem) => {
+            return cardId.id === cartItem.id
+                ? {...cartItem,
+                    price: Number.parseInt(cartItem.price) - (cartItem.quantity > 1 ? 6 : 0),
+                    quantity: cartItem.quantity - (cartItem.quantity > 1 ? 1 : 0)}
+                : cartItem
+        }
+    )
 
 }
 export const incrementHandler = (cartItems, cardId) => {
@@ -43,19 +43,15 @@ export const deleteHandler = (cartItems, cardId) => {
 
 }
 
-
-
-
-
 export const DropdownContext = createContext({
     isActive: false,
     setIsActive: () => null,
     cartItems: [],
-    setCartItems: () => {},
+    setCartItems: () => {
+    },
 })
 
-
-export const DropdownProvider = ({ children }) => {
+export const DropdownProvider = ({children}) => {
     const [isActive, setIsActive] = useState(false);
     const [cartItems, setCartItems] = useState([]);
 //>>>
@@ -71,15 +67,12 @@ export const DropdownProvider = ({ children }) => {
     const deleteElement = (cartId) => {
         setCartItems(deleteHandler(cartItems, cartId));
     }
-//>>>
-
 
     const value = {isActive, setIsActive, cartItems, setCartItems, addItemToCart, decrement, increment, deleteElement};
 
-
     return (
         <DropdownContext.Provider value={value}>
-            { children }
+            {children}
         </DropdownContext.Provider>
     )
 }

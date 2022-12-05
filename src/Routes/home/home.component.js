@@ -1,7 +1,6 @@
-import { Outlet } from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
 import CharityElementsConstructorComponent
     from "../../components/charity-elements-constructor/charity-elements-constructor.component";
-
 
 const Home = () => {
 

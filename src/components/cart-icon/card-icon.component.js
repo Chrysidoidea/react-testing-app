@@ -1,4 +1,4 @@
-import { ReactComponent as MerchIcon } from "../../assets/shopping-bag.svg";
+import {ReactComponent as MerchIcon} from "../../assets/shopping-bag.svg";
 import {useContext} from "react";
 import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
 
@@ -7,12 +7,11 @@ import './card-icon.styles.scss';
 
 const CartIcon = () => {
 
-        const {setIsActive, cartItems} = useContext(DropdownContext);
+    const {setIsActive, cartItems} = useContext(DropdownContext);
 
-        const changeHandler = () => {
-            setIsActive(isActive => !isActive)
-        }
-
+    const changeHandler = () => {
+        setIsActive(isActive => !isActive)
+    }
 
     return (
         <div

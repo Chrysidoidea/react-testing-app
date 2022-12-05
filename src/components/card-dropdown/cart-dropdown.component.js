@@ -9,18 +9,17 @@ import './cart-dropdown.styles.scss';
 const CartDropdown = () => {
 
     const {isActive, cartItems} = useContext(DropdownContext);
-    let toggleClass = isActive ? 'card-dropdown-container active': 'card-dropdown-container';
-
+    let toggleClass = isActive ? 'card-dropdown-container active' : 'card-dropdown-container';
 
     return (
         <div className={toggleClass}>
             <div className='card-items'>
                 {cartItems.length === 0
-                      ? (<div className='empty-card-items'>empty space</div>)
-                      : (cartItems.map(item => <CartItem cartItem={item} key={item.id}/>))}
+                    ? (<div className='empty-card-items'>empty space</div>)
+                    : (cartItems.map(item => <CartItem cartItem={item} key={item.id}/>))}
             </div>
             <div className='cart-button-container'>
-            <Button buttonType='inverted'>Checkout</Button>
+                <Button buttonType='inverted'>Checkout</Button>
             </div>
         </div>
     )

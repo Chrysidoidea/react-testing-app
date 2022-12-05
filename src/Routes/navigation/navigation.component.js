@@ -13,7 +13,6 @@ const Navigation = () => {
 
     const { currentUser } = useContext(UserContext)
 
-
     return (
         <Fragment>
             <div className='navigation-logo'>
