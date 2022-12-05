@@ -22,8 +22,6 @@ const MerchCard = ({merch}) => {
             <a href={process.env.PUBLIC_URL + `/merch/specimen_${id}.jpg`}>
                     <img src={process.env.PUBLIC_URL + `/merch/specimen_${id}.jpg`}
                          alt={`${name} — ${id}`}
-                         width={400}
-                         height={270}
                     />
             </a>
 

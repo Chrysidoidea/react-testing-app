@@ -21,7 +21,7 @@ const SignOutButton = () => {
 
 
     return (
-        <Link className='sign-out' onClick={goAway} to='/auth'>Sign out</Link>
+        <Link className='sign-out' onClick={goAway} to='/react-testing-app/auth'>Sign out</Link>
     )
 }
 

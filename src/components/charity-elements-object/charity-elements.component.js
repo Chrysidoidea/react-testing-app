@@ -10,14 +10,14 @@ const CharityElementsComponent = ({charityElements}) => {
             }}/>
             <div className="category-body-container">
                 <h2>{title}</h2>
+                <a href={URL} className='phone-media-href'>
                 <div className='entrance-logo'>
-                    <a href={URL} className='phone-media-href'>
                         <p className='phone-media-href'>{info}</p>
-                    </a>
                     <a href={URL} className='logo-image' style={{
                         backgroundImage: `url(${logoURL})`
                     }}></a>
                 </div>
+                </a>
             </div>
         </div>
     )

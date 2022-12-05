@@ -1,5 +1,5 @@
 .card-dropdown-container {
-  position: fixed;
+  position: inherit;
   display: flex;
   visibility: hidden;
   opacity: 0;
@@ -44,4 +44,39 @@
   top: 100px;
   justify-content: center;
 
+}
+
+@media ( max-width: 480px) {
+  .card-dropdown-container {
+    align-self: center;
+    top: 190px;
+    right: auto;
+    height: 490px;
+    width: 390px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .card-dropdown-container {
+    align-self: center;
+    top: 7.5rem;
+    right: auto;
+    min-height: 250px;
+    max-height: 70%;
+    min-width: 95%;
+
+    .empty-card-items {
+      margin-top: 4rem;
+      position: absolute;
+      justify-self: center;
+
+    }
+    .card-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
 }

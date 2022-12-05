@@ -13,8 +13,7 @@
   background-color: rgba(211, 214, 217, 0.1);
   border-radius: 12px;
   padding: 12px;
-  max-width: 800px;
-  min-width: 800px;
+  width: 800px;
   box-shadow: rgba(38, 38, 38, 0.8) 0 3px 8px, rgb(218, 218, 218) 0 8px 32px;
   animation: anima 2s infinite;
 
@@ -41,4 +40,50 @@
     }
   }
 }
+}
+
+@media ( max-width: 480px) {
+  .user-menu-container {
+    .user-menu {
+      width: 17rem;
+      margin-top: 15rem;
+
+      h2 {
+        padding-bottom: 0;
+        margin: 0;
+        text-align: center;
+      }
+      h3 {
+        padding-bottom: 0;
+        text-align: center;
+
+      }
+      span {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+@media (min-width:481px) and (max-width: 1024px){
+  .user-menu-container {
+    .user-menu {
+      width: 40rem;
+      margin-top: 8rem;
+
+      h2 {
+        padding-bottom: 0;
+        margin: 0;
+        text-align: center;
+      }
+      h3 {
+        padding-bottom: 0;
+        text-align: center;
+
+      }
+      span {
+        padding-bottom: 0;
+      }
+    }
+  }
 }
