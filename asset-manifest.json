@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/react-testing-app/static/css/main.d6a85141.css",
-    "main.js": "/react-testing-app/static/js/main.147fa259.js",
+    "main.js": "/react-testing-app/static/js/main.fb12fdba.js",
     "static/js/787.88e0d3ad.chunk.js": "/react-testing-app/static/js/787.88e0d3ad.chunk.js",
     "static/media/Logo.svg": "/react-testing-app/static/media/Logo.6c4e8eb06e7d9d38f2dffeab6b5c80c8.svg",
     "static/media/shopping-bag.svg": "/react-testing-app/static/media/shopping-bag.a688874f6f1507316bdfa420328a4a53.svg",
     "index.html": "/react-testing-app/index.html",
     "main.d6a85141.css.map": "/react-testing-app/static/css/main.d6a85141.css.map",
-    "main.147fa259.js.map": "/react-testing-app/static/js/main.147fa259.js.map",
+    "main.fb12fdba.js.map": "/react-testing-app/static/js/main.fb12fdba.js.map",
     "787.88e0d3ad.chunk.js.map": "/react-testing-app/static/js/787.88e0d3ad.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d6a85141.css",
-    "static/js/main.147fa259.js"
+    "static/js/main.fb12fdba.js"
   ]
 }
