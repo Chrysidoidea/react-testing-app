@@ -1,4 +1,4 @@
-import {useState, createContext} from "react";
+import {useState, createContext, useEffect} from "react";
 
 export const addCartItem = (cartItems, productToAdd) => {
 
@@ -7,7 +7,7 @@ export const addCartItem = (cartItems, productToAdd) => {
     if (existingCartItem) {
         return cartItems.map((cartItem) => {
             return cartItem.id === productToAdd.id
-                ? {...cartItem, price: Number.parseInt(cartItem.price) + 6, quantity: cartItem.quantity + 1}
+                ? {...cartItem, quantity: cartItem.quantity + 1}
                 : cartItem
         })
     }
@@ -20,21 +20,25 @@ export const decrementHandler = (cartItems, cardId) => {
     return cartItems.map((cartItem) => {
             return cardId.id === cartItem.id
                 ? {...cartItem,
-                    price: Number.parseInt(cartItem.price) - (cartItem.quantity > 1 ? 6 : 0),
                     quantity: cartItem.quantity - (cartItem.quantity > 1 ? 1 : 0)}
                 : cartItem
         }
     )
 
 }
+
+
+
 export const incrementHandler = (cartItems, cardId) => {
+    cartItems.map(cartItem => console.log(cartItem.id))
 
     return cartItems.map((cartItem) => {
             return cardId.id === cartItem.id
-                ? {...cartItem, price: Number.parseInt(cartItem.price) + 6, quantity: cartItem.quantity + 1}
+                ? {...cartItem, quantity: cartItem.quantity + 1}
                 : cartItem
         }
     )
+
 }
 export const deleteHandler = (cartItems, cardId) => {
     return cartItems.filter((cartItem) => {
@@ -47,14 +51,20 @@ export const DropdownContext = createContext({
     isActive: false,
     setIsActive: () => null,
     cartItems: [],
-    setCartItems: () => {
-    },
+    setCartItems: () => {},
+    cartCount: 0,
 })
 
 export const DropdownProvider = ({children}) => {
     const [isActive, setIsActive] = useState(false);
     const [cartItems, setCartItems] = useState([]);
-//>>>
+    const [cartCount, setCartCount] = useState(0);
+
+    useEffect(() => {
+             const newCartCount = cartItems.reduce((accumulator, currentItem) => accumulator + currentItem.quantity, 0);
+             setCartCount(newCartCount)
+    }, [cartItems])
+
     const addItemToCart = (productToAdd) => {
         setCartItems(addCartItem(cartItems, productToAdd));
     };
@@ -68,7 +78,7 @@ export const DropdownProvider = ({children}) => {
         setCartItems(deleteHandler(cartItems, cartId));
     }
 
-    const value = {isActive, setIsActive, cartItems, setCartItems, addItemToCart, decrement, increment, deleteElement};
+    const value = {isActive, setIsActive, cartItems, setCartItems, addItemToCart, decrement, increment, deleteElement, cartCount};
 
     return (
         <DropdownContext.Provider value={value}>

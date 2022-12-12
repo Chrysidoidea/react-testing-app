@@ -18,6 +18,13 @@ const CartDropdown = () => {
                     ? (<div className='empty-card-items'>empty space</div>)
                     : (cartItems.map(item => <CartItem cartItem={item} key={item.id}/>))}
             </div>
+            <div className='total-price'>{
+                `Total Price: $${
+                    cartItems.reduce((accumulator, currentElement) => accumulator + Number.parseInt(currentElement.price) , 0)
+                }
+                `
+
+            }</div>
             <div className='cart-button-container'>
                 <Button buttonType='inverted'>Checkout</Button>
             </div>

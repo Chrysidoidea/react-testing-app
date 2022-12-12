@@ -43,7 +43,16 @@
   position: sticky;
   top: 100px;
   justify-content: center;
+}
 
+.total-price {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 20px;
+  font-weight: bold;
 }
 
 @media ( max-width: 480px) {

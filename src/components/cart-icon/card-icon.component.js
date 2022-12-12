@@ -7,7 +7,7 @@ import './card-icon.styles.scss';
 
 const CartIcon = () => {
 
-    const {setIsActive, cartItems} = useContext(DropdownContext);
+    const {setIsActive, cartItems,  cartCount} = useContext(DropdownContext);
 
     const changeHandler = () => {
         setIsActive(isActive => !isActive)
@@ -19,7 +19,7 @@ const CartIcon = () => {
             onClick={changeHandler}
         >
             <MerchIcon className='merch-icon'/>
-            <span className='icon-count'>{cartItems.length}</span>
+            <span className='icon-count'>{cartCount}</span>
         </div>
     )
 };

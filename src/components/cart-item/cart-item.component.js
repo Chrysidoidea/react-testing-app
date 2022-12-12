@@ -1,11 +1,14 @@
 import "./cart-item.styles.scss";
 
+
 import {useContext} from "react";
 import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
 
 const CartItem = ({cartItem}) => {
     const {name, quantity, id, price} = cartItem;
     const {decrement, increment, deleteElement} = useContext(DropdownContext);
+
+
 
     return (
         <div className="card-item-dropdown">
@@ -26,7 +29,7 @@ const CartItem = ({cartItem}) => {
                         </div>
                     </div>
                     <div className="attribute-price">
-                        <h2>${price}</h2>
+                        <h2>{quantity} x ${price}</h2>
                     </div>
                 </div>
             </div>

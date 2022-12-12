@@ -19,3 +19,15 @@
   }
 }
 
+@media (min-width:375px) and (max-width: 500px){
+  .sign-in-container {
+    width: 230px;
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
