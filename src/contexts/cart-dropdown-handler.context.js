@@ -2,7 +2,7 @@ import {useState, createContext, useEffect} from "react";
 
 export const addCartItem = (cartItems, productToAdd) => {
 
-    const existingCartItem = cartItems.find((cartItem) => cartItem.id === productToAdd.id)
+    const existingCartItem = cartItems.find((cartItem) => cartItem.id === productToAdd.id);
 
     if (existingCartItem) {
         return cartItems.map((cartItem) => {
@@ -15,31 +15,22 @@ export const addCartItem = (cartItems, productToAdd) => {
     return [...cartItems, {...productToAdd, quantity: 1}];
 };
 
-export const decrementHandler = (cartItems, cardId) => {
+export const removeCartItem = (cartItems, productToRemove) => {
 
-    return cartItems.map((cartItem) => {
-            return cardId.id === cartItem.id
-                ? {...cartItem,
-                    quantity: cartItem.quantity - (cartItem.quantity > 1 ? 1 : 0)}
+    const existingCartItem = cartItems.find(cartItem => cartItem.id === productToRemove.id);
+
+    if (existingCartItem.quantity === 1) {
+        return cartItems.filter(cartItem => cartItem.id !== productToRemove.id);
+    }
+
+        return cartItems.map((cartItem) => {
+            return cartItem.id === productToRemove.id
+                ? {...cartItem, quantity: cartItem.quantity - 1}
                 : cartItem
-        }
-    )
+        });
 
-}
+};
 
-
-
-export const incrementHandler = (cartItems, cardId) => {
-    cartItems.map(cartItem => console.log(cartItem.id))
-
-    return cartItems.map((cartItem) => {
-            return cardId.id === cartItem.id
-                ? {...cartItem, quantity: cartItem.quantity + 1}
-                : cartItem
-        }
-    )
-
-}
 export const deleteHandler = (cartItems, cardId) => {
     return cartItems.filter((cartItem) => {
         return cartItem.id !== cardId.id
@@ -53,32 +44,53 @@ export const DropdownContext = createContext({
     cartItems: [],
     setCartItems: () => {},
     cartCount: 0,
+    cartTotal: 0,
 })
 
 export const DropdownProvider = ({children}) => {
     const [isActive, setIsActive] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [cartCount, setCartCount] = useState(0);
+    const [cartTotal, setCartTotal] = useState(0);
 
     useEffect(() => {
-             const newCartCount = cartItems.reduce((accumulator, currentItem) => accumulator + currentItem.quantity, 0);
+             const newCartCount = cartItems.reduce(
+                 (accumulator, currentItem) => accumulator + currentItem.quantity,
+                 0
+             );
              setCartCount(newCartCount)
-    }, [cartItems])
+    }, [cartItems]);
+
+    useEffect(() => {
+        const newCartTotal = cartItems.reduce(
+            (accumulator, currentItem) => accumulator + currentItem.quantity * currentItem.price,
+            0
+        );
+        setCartTotal(newCartTotal)
+    }, [cartItems]);
 
     const addItemToCart = (productToAdd) => {
         setCartItems(addCartItem(cartItems, productToAdd));
     };
-    const decrement = (cartId) => {
-        setCartItems(decrementHandler(cartItems, cartId));
+    const removeItemFromCard = (productToRemove) => {
+        setCartItems(removeCartItem(cartItems, productToRemove))
     }
-    const increment = (cartId) => {
-        setCartItems(incrementHandler(cartItems, cartId));
-    }
+
     const deleteElement = (cartId) => {
         setCartItems(deleteHandler(cartItems, cartId));
     }
 
-    const value = {isActive, setIsActive, cartItems, setCartItems, addItemToCart, decrement, increment, deleteElement, cartCount};
+    const value = {
+        isActive,
+        setIsActive,
+        cartItems,
+        setCartItems,
+        addItemToCart,
+        removeItemFromCard,
+        deleteElement,
+        cartCount,
+        cartTotal
+    };
 
     return (
         <DropdownContext.Provider value={value}>

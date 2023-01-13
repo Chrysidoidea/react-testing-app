@@ -4,6 +4,7 @@ import Merch from "./merch/merch-component";
 import Navigation from "./Routes/navigation/navigation.component";
 import Authenticaton from "./authentication/authenticaton.component";
 import UserMenuComponent from "./components/user-menu/user-menu.component";
+import CheckoutComponent from "./Routes/checkout/checkout.component";
 
 const App = () => {
 
@@ -14,6 +15,7 @@ const App = () => {
                 <Route path='merch' element={<Merch/>}/>
                 <Route path='auth' element={<Authenticaton/>}/>
                 <Route path='user-menu' element={<UserMenuComponent/>}/>
+                <Route path='checkout' element={<CheckoutComponent/>} />
             </Route>
         </Routes>
     )

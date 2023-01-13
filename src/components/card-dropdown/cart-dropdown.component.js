@@ -1,5 +1,8 @@
+
 import Button from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
+import {useNavigate} from 'react-router-dom'
+
 
 import {useContext} from "react";
 import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
@@ -8,8 +11,13 @@ import './cart-dropdown.styles.scss';
 
 const CartDropdown = () => {
 
-    const {isActive, cartItems} = useContext(DropdownContext);
-    let toggleClass = isActive ? 'card-dropdown-container active' : 'card-dropdown-container';
+    const {isActive, cartItems, cartTotal} = useContext(DropdownContext);
+    const toggleClass = isActive ? 'card-dropdown-container active' : 'card-dropdown-container';
+    const navigate = useNavigate();
+
+    const toCheckoutHandler = () => {
+        navigate('/react-testing-app/checkout');
+    }
 
     return (
         <div className={toggleClass}>
@@ -19,14 +27,11 @@ const CartDropdown = () => {
                     : (cartItems.map(item => <CartItem cartItem={item} key={item.id}/>))}
             </div>
             <div className='total-price'>{
-                `Total Price: $${
-                    cartItems.reduce((accumulator, currentElement) => accumulator + Number.parseInt(currentElement.price) , 0)
-                }
+                `Total Price: $${cartTotal}
                 `
-
             }</div>
             <div className='cart-button-container'>
-                <Button buttonType='inverted'>Checkout</Button>
+                <Button onClick={toCheckoutHandler} type='button' buttonType='inverted' >to checkout</Button>
             </div>
         </div>
     )
