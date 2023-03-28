@@ -25,6 +25,7 @@ const CharityElementsComponent = ({charityElements}) => {
                             style={{
                                 backgroundImage: `url(${logoURL})`,
                             }}
+                            aria-label="charity name logo"
                         ><span style={{ display: 'none' }}>charity name logo</span></a>
                     </div>
 
