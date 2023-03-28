@@ -1,15 +1,14 @@
 import {useState} from "react";
-
+import {useDispatch} from "react-redux";
 import Button from "../button/button.component";
+import {emailSignInStart, googleSignInStart} from "../../store/user/user.action";
 import FormInput from "../form-input/form-input.component";
-import AnimationEffectComponent from "../../effects/animation-effect.component";
-
-import {
-    createAuthUserWithEmailAndPassword,
-    createUserDocumentFromAuth,
-    signInWithGooglePopup,
-    sighInAuthUserWithEmailAndPassword
-} from "../../utils/firebase/firebase.utils";
+import AnimationAuthOne from "../../effects/authentication-animation/animation.auth(1)";
+import AnimationAuthTwo from "../../effects/authentication-animation/animation.auth(2)";
+import AnimationAuthThree from "../../effects/authentication-animation/animation.auth(3)";
+import AnimationAuthFour from "../../effects/authentication-animation/animation.auth(4)";
+import AnimationAuthFifth from "../../effects/authentication-animation/animation.auth(5)";
+import AnimationAuthButton from "../../effects/authentication-animation/Animation.auth.button";
 
 import './sign-in.styles.scss'
 
@@ -19,27 +18,22 @@ const defaultFormFields = {
 };
 
 const SignInForm = () => {
+    const dispatch = useDispatch();
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {email, password} = formFields;
 
-    const signInWithGoogle = async () => {
-        await signInWithGooglePopup();
-
-    }
-
     const resetFormField = () => {
         setFormFields(defaultFormFields)
+    }
+    const signInWithGoogle = async () => {
+        dispatch(googleSignInStart());
     }
 
     const submitHandler = async (event) => {
         event.preventDefault();
 
         try {
-            const {user} = await sighInAuthUserWithEmailAndPassword(
-                email,
-                password
-            );
-
+            dispatch(emailSignInStart(email, password));
             resetFormField();
 
         } catch (err) {
@@ -66,12 +60,18 @@ const SignInForm = () => {
     };
 
     return (
-        <AnimationEffectComponent>
             <div className='sign-in-container'>
+                <AnimationAuthOne>
                 <h2>Enter account credentials</h2>
+                </AnimationAuthOne>
+                <AnimationAuthTwo>
                 <h1>WELCOME</h1>
+                </AnimationAuthTwo>
+                <AnimationAuthThree>
                 <span>Sign in via Mail & Password</span>
+                </AnimationAuthThree>
                 <form onSubmit={submitHandler}>
+                    <AnimationAuthFour>
                     <FormInput
                         label='Email'
                         type='email'
@@ -80,6 +80,8 @@ const SignInForm = () => {
                         name='email'
                         value={email}
                     />
+                    </AnimationAuthFour>
+                    <AnimationAuthFifth>
                     <FormInput
                         label='Password'
                         type='password'
@@ -88,10 +90,13 @@ const SignInForm = () => {
                         name='password'
                         value={password}
                     />
-
+                    </AnimationAuthFifth>
+                    <AnimationAuthButton>
                     <div className='sign-in-button-container'>
                         <Button
-                            type='submit'>
+                            type='submit'
+                            buttonType='undefined'
+                        >
                             Sign in
                         </Button>
                         <Button
@@ -101,9 +106,9 @@ const SignInForm = () => {
                             Sign in with Google
                         </Button>
                     </div>
+                    </AnimationAuthButton>
                 </form>
             </div>
-        </AnimationEffectComponent>
     )
 }
 

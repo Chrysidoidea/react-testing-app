@@ -1,9 +1,14 @@
 import {useState} from "react";
-import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from "../../utils/firebase/firebase.utils";
-import AnimationEffectComponent from "../../effects/animation-effect.component";
-
+import {useDispatch} from "react-redux";
+import AnimationAuthOne from "../../effects/authentication-animation/animation.auth(1)";
+import AnimationAuthTwo from "../../effects/authentication-animation/animation.auth(2)";
+import AnimationAuthThree from "../../effects/authentication-animation/animation.auth(3)";
+import AnimationAuthFour from "../../effects/authentication-animation/animation.auth(4)";
+import AnimationAuthFifth from "../../effects/authentication-animation/animation.auth(5)";
+import AnimationAuthButton from "../../effects/authentication-animation/Animation.auth.button";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
+import {signUpStart} from "../../store/user/user.action";
 
 import './sign-up-form.styles.scss';
 
@@ -15,6 +20,7 @@ const defaultFormFields = {
 };
 
 const SignUpForm = () => {
+    const dispatch = useDispatch();
     const [formFields, setFormFields] = useState(defaultFormFields);
     const {displayName, email, password, confirmPassword} = formFields;
 
@@ -39,13 +45,7 @@ const SignUpForm = () => {
         }
 
         try {
-            const {user} = await createAuthUserWithEmailAndPassword(
-                email,
-                password
-            );
-
-            await createUserDocumentFromAuth(user, {displayName});
-
+            dispatch(signUpStart(email, password, displayName))
             resetFormField();
 
         } catch (err) {
@@ -58,13 +58,12 @@ const SignUpForm = () => {
     }
 
     return (
-        <AnimationEffectComponent>
             <div className='sign-up-container'>
-                <h2>Have no account?</h2>
-                <h1>DON'T PANIC</h1>
-                <span>Sign up via Mail & Password</span>
+                <AnimationAuthOne>
+                <h2>Sign up via Mail & Password</h2>
+                </AnimationAuthOne>
                 <form onSubmit={submitHandler}>
-
+                    <AnimationAuthTwo>
                     <FormInput
                         label='Name'
                         type='text'
@@ -73,7 +72,8 @@ const SignUpForm = () => {
                         name='displayName'
                         value={displayName}
                     />
-
+                    </AnimationAuthTwo>
+                    <AnimationAuthThree>
                     <FormInput
                         label='Email'
                         type='email'
@@ -82,7 +82,8 @@ const SignUpForm = () => {
                         name='email'
                         value={email}
                     />
-
+                    </AnimationAuthThree>
+                    <AnimationAuthFour>
                     <FormInput
                         label='Password'
                         type='password'
@@ -91,7 +92,8 @@ const SignUpForm = () => {
                         name='password'
                         value={password}
                     />
-
+                    </AnimationAuthFour>
+                    <AnimationAuthFifth>
                     <FormInput
                         label='Confirm Password'
                         type='password'
@@ -100,11 +102,14 @@ const SignUpForm = () => {
                         name='confirmPassword'
                         value={confirmPassword}
                     />
-
+                    </AnimationAuthFifth>
+                    <AnimationAuthButton>
+                        <div className='sign-up-button-container'>
                     <Button type='submit'>Submit</Button>
+                        </div>
+                    </AnimationAuthButton>
                 </form>
             </div>
-        </AnimationEffectComponent>
     )
 }
 

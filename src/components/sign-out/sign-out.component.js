@@ -1,23 +1,38 @@
-import {signOutUser} from "../../utils/firebase/firebase.utils";
-import {useContext} from "react";
-import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
-import {Link} from "react-router-dom";
+import {setIsActive} from "../../store/cart-dropdown/cart-dropdown.action";
+import {selectCartIsActive} from "../../store/cart-dropdown/cart-dropdown.selector";
+import {useDispatch} from "react-redux";
+import {signOutStart} from "../../store/user/user.action";
+
+import Button from "../button/button.component";
+import {useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const SignOutButton = () => {
-    const {isActive, setIsActive} = useContext(DropdownContext);
-
-    const goAway = async () => {
-
+    const dispatch = useDispatch()
+    const navigate = useNavigate();
+    const goAway = () => {
+        navigate('/auth');
+    }
+    const isActive = useSelector(selectCartIsActive);
+    const signOutUser = () => {
+        dispatch(signOutStart());
         if (isActive) {
-            setIsActive(isActive => !isActive);
-            await signOutUser()
-        } else {
-            await signOutUser()
+            dispatch(setIsActive(isActive => !isActive));
         }
+        goAway();
     }
 
     return (
-        <Link className='sign-out' onClick={goAway} to='/react-testing-app/auth'>Sign out</Link>
+        <div className='sign-out-button_container'>
+        <Button
+            type='button'
+            buttonType='undefined'
+            onClick={signOutUser}
+        >
+            Sign out
+        <
+        /Button>
+        </div>
     )
 }
 

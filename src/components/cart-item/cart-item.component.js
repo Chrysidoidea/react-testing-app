@@ -1,16 +1,19 @@
 import "./cart-item.styles.scss";
 
+import {addItemToCart, removeItemFromCard, deleteElement} from "../../store/cart-dropdown/cart-dropdown.action";
+import {useSelector} from "react-redux";
+import {selectCartItems} from "../../store/cart-dropdown/cart-dropdown.selector";
+import {useDispatch} from "react-redux";
 
-import {useContext} from "react";
-import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
 
 const CartItem = ({cartItem}) => {
     const {name, quantity, id, price} = cartItem;
-    const {removeItemFromCard, addItemToCart, deleteElement} = useContext(DropdownContext);
+    const dispatch = useDispatch()
+    const cartItems = useSelector(selectCartItems);
 
-    const addItemHandler = () => addItemToCart(cartItem);
-    const removeItemHandler = () => removeItemFromCard(cartItem);
-    const deleteItemHandler = () => deleteElement(cartItem);
+    const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
+    const removeItemHandler = () => dispatch(removeItemFromCard(cartItems, cartItem));
+    const deleteItemHandler = () => dispatch(deleteElement(cartItems, cartItem));
 
     return (
         <div className="card-item-dropdown">
@@ -23,11 +26,11 @@ const CartItem = ({cartItem}) => {
                 <div className="card-item-attributes">
                     <div className="quantity-container">
                         <div className="decrement" onClick={removeItemHandler}>
-                            -
+                            <span>-</span>
                         </div>
                         <span>{quantity}</span>
                         <div className="increment" onClick={addItemHandler}>
-                            +
+                                <span>+</span>
                         </div>
                     </div>
                     <div className="attribute-price">

@@ -1,38 +1,44 @@
-.authentication-container {
-  width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
+.authentication-sector {
+  display: grid;
+  height: 100vh;
 
-@media ( max-width: 480px) {
   .authentication-container {
-    padding-top: 13rem;
+    place-self: center;
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    text-align: center;
     flex-direction: column;
-    gap: 5rem;
-    justify-content: center;
     align-items: center;
-    width: 350px;
-  }
-}
+    justify-content: space-around;
 
-@media (min-width:481px) and (max-width: 1024px){
-  .authentication-container {
-    padding-top: 7rem;
-    flex-direction: column;
-    gap: 10rem;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1280px){
-  .authentication-container {
-    gap: 10rem;
-    justify-content: center;
-
+    .sign-in-handler {
+      color: rgba(128, 128, 128, 0.34);
+      cursor: pointer;
+    }
   }
 }
 
 
+//@media (max-width: 480px) {
+//  .authentication-sector {
+//
+//  }
+//}
+
+//
+//@media (min-width:481px) and (max-width: 1024px){
+//  .authentication-container {
+//    justify-content: center;
+//    align-items: center;
+//  }
+//}
+//
+//@media (min-width: 1025px) and (max-width: 1280px){
+//  .authentication-container {
+//    justify-content: space-around;
+//  }
+//}
+//
+//

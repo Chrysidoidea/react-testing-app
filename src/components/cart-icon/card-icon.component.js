@@ -1,17 +1,21 @@
 import {ReactComponent as MerchIcon} from "../../assets/shopping-bag.svg";
-import {useContext} from "react";
-import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
+import {useDispatch, useSelector} from "react-redux";
 
+import {selectCartIsActive, selectCartCount} from "../../store/cart-dropdown/cart-dropdown.selector";
+import {setIsActive} from "../../store/cart-dropdown/cart-dropdown.action";
 
 import './card-icon.styles.scss';
 
 const CartIcon = () => {
+    const isActive = useSelector(selectCartIsActive);
+    const cartCount = useSelector(selectCartCount);
 
-    const {setIsActive, cartItems,  cartCount} = useContext(DropdownContext);
+    const dispatch = useDispatch();
 
     const changeHandler = () => {
-        setIsActive(isActive => !isActive)
-    }
+        dispatch(setIsActive(!isActive))
+
+    };
 
     return (
         <div

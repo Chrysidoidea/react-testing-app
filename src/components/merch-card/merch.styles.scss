@@ -1,163 +1,86 @@
-.merch-container {
-  display: grid;
-  padding: 10rem 25px 25px 25px;
-  grid-gap: 40px;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-
-  .merch-card-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    border-radius: 4px;
-    position: relative;
-    width: 400px;
-    height: 270px;
-
-  }
-  .watch {
-    position: absolute;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.25);
-    user-select: none;
-    top: 75px;
-    filter: blur(1px);
-    font-size: 70px;
-    transition: 1s;
-  }
-
-
-  .footer {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    justify-content: space-around;
-    width: 100%;
-    position: absolute;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: white;
-    top: 251px;
-    box-shadow: rgba(0, 0, 0, 0.23) 0px 8px 9px;
-    backdrop-filter: blur(1px);
-    border-radius: 6px;
-    transition: 2s;
-background-image: linear-gradient(to top, rgba(0, 0, 0, 0.46), rgba(255, 255, 255, 0));
-  }
-  .price {
-    font-size: 30px;
-  }
-
-  Button {
-    position: absolute;
-    top: 190px;
-    backdrop-filter: blur(8px);
-    background-color: transparent;
-    border: none;
-    transition: 1s;
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.42);
-      color: #ced2ce;
-    }
-  }
-  img {
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.23) 0px 5px 5px;
-    transition: 1s;
-    opacity: .85;
-    width: 400px;
-    height: 270px;
-
-
-    &:hover{
-      opacity: 1;
-    }
-
-  }
-
-}
-
-@media ( max-width: 480px) {
-  .merch-container {
-    grid-template-columns: repeat(1, 1fr);
-    align-items: center;
-    justify-items: center;
-    padding: 13rem 0 0 0;
-
-
-    .merch-card-container {
-      padding: 0;
-      width: 370px;
-      height: 240px;
-
-      img {
-        width: 350px;
-        height: 220px;
-      }
-
-    }
-    .footer {
-      top: 193px;
-      width: 350px;
-    }
-    button {
-      top: 120px;
-    }
-  }
-
-}
-
-@media ( min-width: 481px) and (max-width: 1024px){
-
-  .merch-container {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    justify-items: center;
-    padding: 8rem 0 0 0;
-
-    .merch-card-container {
-      padding: 0;
-      width: 370px;
-      height: 240px;
-
-      img {
-        width: 350px;
-        height: 220px;
-      }
-      .footer {
-        top: 193px;
-        width: 350px;
-      }
-      button {
-        top: 120px;
-      }
-    }
-  }
-}
-
-
-@media ( min-width: 1025px) and (max-width: 1280px) {
-  .merch-container {
-    grid-template-columns: repeat(3, 1fr);
-
-    .merch-card-container {
-      padding: 0;
-      width: 370px;
-      height: 240px;
-      img {
-        width: 350px;
-        height: 220px;
-      }
-      .footer {
-        top: 193px;
-        width: 350px;
-      }
-      button {
-        top: 120px;
-      }
-    }
-  }
-}
+//
+//
+//
+//
+//
+//@media ( max-width: 480px) {
+//  .merch-container {
+//    grid-template-columns: repeat(1, 1fr);
+//    align-items: center;
+//    justify-items: center;
+//    padding: 13rem 0 0 0;
+//
+//
+//    .merch-card-container {
+//      padding: 0;
+//      width: 370px;
+//      height: 240px;
+//
+//      img {
+//        width: 350px;
+//        height: 220px;
+//      }
+//
+//    }
+//    .footer {
+//      top: 193px;
+//      width: 350px;
+//    }
+//    button {
+//      top: 120px;
+//    }
+//  }
+//
+//}
+//
+//@media ( min-width: 481px) and (max-width: 1024px){
+//
+//  .merch-container {
+//    grid-template-columns: repeat(2, 1fr);
+//    align-items: center;
+//    justify-items: center;
+//    padding: 8rem 0 0 0;
+//
+//    .merch-card-container {
+//      padding: 0;
+//      width: 370px;
+//      height: 240px;
+//
+//      img {
+//        width: 350px;
+//        height: 220px;
+//      }
+//      .footer {
+//        top: 193px;
+//        width: 350px;
+//      }
+//      button {
+//        top: 120px;
+//      }
+//    }
+//  }
+//}
+//
+//
+//@media ( min-width: 1025px) and (max-width: 1280px) {
+//  .merch-container {
+//    grid-template-columns: repeat(3, 1fr);
+//
+//    .merch-card-container {
+//      padding: 0;
+//      width: 370px;
+//      height: 240px;
+//      img {
+//        width: 350px;
+//        height: 220px;
+//      }
+//      .footer {
+//        top: 193px;
+//        width: 350px;
+//      }
+//      button {
+//        top: 120px;
+//      }
+//    }
+//  }
+//}

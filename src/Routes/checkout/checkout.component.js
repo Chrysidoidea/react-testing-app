@@ -1,14 +1,15 @@
 import './checkout.styles.scss'
-import {useContext} from "react";
-import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
-import Button from "../../components/button/button.component";
 
+import Button from "../../components/button/button.component";
+import {selectCartItems, selectCartTotal} from "../../store/cart-dropdown/cart-dropdown.selector";
 
 import CheckoutItemComponent from "../../components/checkout-item/checkout-item.component";
+import {useSelector} from "react-redux";
 
 
 const CheckoutComponent = () => {
-    const {cartItems, cartTotal} = useContext(DropdownContext);
+    const cartItems = useSelector(selectCartItems);
+    const cartTotal = useSelector(selectCartTotal)
 
 
     return (
@@ -30,6 +31,7 @@ const CheckoutComponent = () => {
                     <span>Remove</span>
                 </div>
             </div>
+            <div className='checkout-body'>
                 {cartItems.length === 0
                     ? (<div className='empty-checkout-page'>empty space</div>)
                     : (cartItems.map(cartItem => {
@@ -38,12 +40,14 @@ const CheckoutComponent = () => {
                             <CheckoutItemComponent key={id} cartItem={cartItem}/>
                         )
                     }))}
+
                 <div className='total'>
-                    <span >Total: ${cartTotal}</span>
+                    <span >Total: $<span className='total_price'>{cartTotal}</span></span>
                 </div>
-                <div>
+                <div className='checkout-footer'>
                     <Button>Checkout</Button>
                 </div>
+            </div>
             </div>
     )
 }

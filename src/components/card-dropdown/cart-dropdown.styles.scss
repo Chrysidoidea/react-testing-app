@@ -11,10 +11,11 @@
   border-radius: 10px;
   height: 510px;
   width: 405px;
+  //background-color: rgba(178, 176, 176, 0);
   backdrop-filter: blur(25px) brightness(60%);
   padding: 15px;
-  z-index: 5;
-  transition: visibility .6s, opacity .3s;
+  z-index: 50;
+  transition: visibility 0.6s, opacity .3s;
   overflow: scroll;
 }
 .active {
@@ -43,6 +44,7 @@
   position: sticky;
   top: 100px;
   justify-content: center;
+
 }
 
 .total-price {

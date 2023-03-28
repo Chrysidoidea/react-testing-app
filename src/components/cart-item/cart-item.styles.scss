@@ -22,28 +22,146 @@
     margin: 3px;
 
     .increment {
+      position: relative;
       width: 35px;
       height: 40px;
-      background-color: rgb(178, 176, 176);
-      border-radius: 3px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      font-size: 30px;
-      cursor: pointer;
-      user-select: none;
-      transition: .1s;
 
-      &:hover {
-        background-color: rgba(189, 189, 189, 0.49);
+
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-content: center;
+        background-color: rgba(255, 225, 225, 0.1);
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.32);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1.875rem;
+        color: white;
+        z-index: 1;
+        overflow: hidden;
+        transition: 0.5s;
+        backdrop-filter: blur(15px);
+
+        &:hover {
+          font-size: 2.2rem;
+          color: black;
+        }
+
+        &:hover::before {
+          transform: skew(45deg) translateX(200%);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+          transform: skew(45deg) translateX(0);
+          transition: 0.5s;
+          z-index: 1;
+        }
       }
 
-      &:active {
-        background-color: rgba(255, 255, 255, 0.7);
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2px;
+        width: 10px;
+        height: 5px;
+        z-index: -1;
+        background: #40ff00;
+        border-radius: 3px;
+        transition: .5s;
       }
 
+      &:hover::before {
+        height: 85%;
+        width: 85%;
+        transition-delay: 0.1s;
+      }
     }
+
+    .decrement {
+      position: relative;
+      width: 35px;
+      height: 40px;
+
+      span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-content: center;
+        background-color: rgba(255, 225, 225, 0.1);
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.32);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 1.875rem;
+        color: white;
+        z-index: 1;
+        overflow: hidden;
+        transition: 0.5s;
+        backdrop-filter: blur(15px);
+
+        &:hover {
+          font-size: 2.2rem;
+          color: black;
+        }
+
+        &:hover::before {
+          transform: skew(45deg) translateX(200%);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+          transform: skew(45deg) translateX(0);
+          transition: 0.5s;
+          z-index: 1;
+        }
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 2px;
+        width: 10px;
+        height: 5px;
+        z-index: -1;
+        background: #ff0000;
+        border-radius: 3px;
+        transition: .5s;
+      }
+
+      &:hover::before {
+        height: 85%;
+        width: 85%;
+        transition-delay: 0.1s;
+      }
+    }
+
 
     span {
       width: 40px;
@@ -53,29 +171,6 @@
       color: #ffffff;
     }
 
-    .decrement {
-      width: 35px;
-      height: 40px;
-      background-color: rgba(255, 255, 255, 0.89);
-      border-radius: 3px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      cursor: pointer;
-      user-select: none;
-      transition: .1s;
-      text-align: center;
-
-      &:hover {
-        background-color: rgba(189, 189, 189, 0.49);
-      }
-
-      &:active {
-        background-color: rgba(255, 255, 255, 0.7);
-      }
-
-    }
   }
 
 

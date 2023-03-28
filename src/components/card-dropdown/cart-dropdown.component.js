@@ -1,22 +1,22 @@
-
+import {useSelector} from "react-redux";
 import Button from "../button/button.component";
 import CartItem from "../cart-item/cart-item.component";
 import {useNavigate} from 'react-router-dom'
 
-
-import {useContext} from "react";
-import {DropdownContext} from "../../contexts/cart-dropdown-handler.context";
-
+import {selectCartIsActive, selectCartItems, selectCartTotal} from "../../store/cart-dropdown/cart-dropdown.selector";
 import './cart-dropdown.styles.scss';
 
-const CartDropdown = () => {
 
-    const {isActive, cartItems, cartTotal} = useContext(DropdownContext);
+const CartDropdown = () => {
+    const isActive = useSelector(selectCartIsActive);
+    const cartItems = useSelector(selectCartItems);
+    const cartTotal = useSelector(selectCartTotal);
+
     const toggleClass = isActive ? 'card-dropdown-container active' : 'card-dropdown-container';
     const navigate = useNavigate();
 
     const toCheckoutHandler = () => {
-        navigate('/react-testing-app/checkout');
+        navigate('/checkout');
     }
 
     return (

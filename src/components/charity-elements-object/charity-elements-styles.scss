@@ -20,6 +20,9 @@
 
     &:hover {
       opacity: 1;
+      scale: 0.99;
+      box-shadow: rgba(38, 38, 38, 0.8) 0 2px 4px, rgb(218, 218, 218) 0 4px 16px;
+
     }
 
     .background-image {
@@ -76,6 +79,7 @@
       justify-content: space-between;
 
     }
+
     .logo-image {
       min-height: 8.75rem; max-height: 9.375rem;
       min-width: 12.5rem; max-width: 13.125rem;
@@ -89,6 +93,7 @@
       opacity: .8;
       transition: all 0.4s ease;
       overflow: hidden;
+
       &:hover {
         filter: grayscale(0.15);
       }
@@ -111,7 +116,6 @@
         &:after {
           left: 135%;
         }
-
       }
     }
   }
@@ -150,9 +154,9 @@
   }
 }
 
-@media (min-width:481px) and (max-width: 768px){
+@media (min-width:481px) and (max-width: 768px) {
   .categories-container {
-    padding: 9rem 1.5rem 0 1.5rem;
+    padding: 10rem 1.5rem 0 1.5rem;
     height: 120rem;
     grid-template-columns: repeat(1, 1fr);
 
@@ -188,7 +192,7 @@
 @media (min-width: 768px) and (max-width: 1280px) {
   .categories-container {
     grid-template-columns: repeat(1, 1fr);
-    padding: 9rem 1.5rem 0 1.5rem;
+    padding: 10rem 1.5rem 0 1.5rem;
 
     .category-container {
       opacity: 0.9;
@@ -201,8 +205,6 @@
     }
   }
 }
-
-
 
 * {
   font-family: 'Libre Baskerville', serif

@@ -1,43 +1,91 @@
-import {Outlet, Link} from "react-router-dom";
-import {Fragment, useContext} from "react";
+import {Outlet, NavLink} from "react-router-dom";
+import {motion} from "framer-motion";
+import {Fragment} from "react";
+import Logo from "./navigation.logo.component";
+import {useSelector} from "react-redux";
+
 
 import CardIcon from "../../components/cart-icon/card-icon.component";
 import CardDropdown from "../../components/card-dropdown/cart-dropdown.component";
 
 import './navigation.styles.scss';
+import {selectCurrentUser} from "../../store/user/user.selector";
 
-import {ReactComponent as TreeLogo} from "../../assets/Logo.svg";
-import {UserContext} from "../../contexts/user.context";
+
+const animaVariants = {
+    hover: {
+        scale: 1.1
+    },
+    tap: {
+        scale: 0.8
+    },
+    effect: {
+        transition: {
+            duration: 1
+        }
+    }
+};
+
 
 const Navigation = () => {
+    const currentUser = useSelector(selectCurrentUser)
 
-    const {currentUser} = useContext(UserContext)
 
     return (
         <Fragment>
             <div className='navigation-logo'>
-                <Link className='logo-container' to='/react-testing-app'>
-                    <TreeLogo className='logo'/>
-                </Link>
+                <motion.div
+                    variants={animaVariants}
+                    whileHover='hover'
+                    whileTap='tap'
+                    transition='effect'
+                >
+                    <NavLink className='logo-container' to='/'>
+                        <Logo/>
+                    </NavLink>
+                </motion.div>
                 <div className='navigation-elements'>
-
-                    <div className='nav-links-container'>
-                        <Link className='nav-link upper-case' to='/react-testing-app/merch'>
+                    <motion.div
+                        className='nav-links-container'
+                        variants={animaVariants}
+                        whileHover='hover'
+                        whileTap='tap'
+                        transition='effect'
+                    >
+                        <NavLink className='nav-link upper-case' to='/shop'>
                             Merch
-                        </Link>
-                    </div>
-
+                        </NavLink>
+                    </motion.div>
 
                     <div className='nav-links-container'>
                         {currentUser ? (
                             <div className='nav-user-settings-container'>
-                                <Link className='nav-link upper-case' to='/react-testing-app/user-menu'>Settings</Link>
-                                <CardIcon/>
+                                <motion.div
+                                    variants={animaVariants}
+                                    whileHover='hover'
+                                    whileTap='tap'
+                                    transition='effect'
+                                >
+                                    <NavLink className='nav-link upper-case' to='/auth'>Settings</NavLink>
+                                </motion.div>
+                                <motion.div
+                                    variants={animaVariants}
+                                    whileHover='hover'
+                                    whileTap='tap'
+                                    transition='effect'
+                                >
+                                    <CardIcon/>
+                                </motion.div>
                             </div>
                         ) : (
-                            <div>
-                                <Link className='sign-in upper-case' to='/react-testing-app/auth'>Sign In</Link>
-                            </div>
+                            <motion.div
+                                variants={animaVariants}
+                                whileHover='hover'
+                                whileTap='tap'
+                                transition='effect'
+                            >
+                                <NavLink className='sign-in upper-case' to='/auth'>Sign In</NavLink>
+                            </motion.div>
                         )
                         }
                     </div>
