@@ -11,6 +11,7 @@ import UserMenuComponent from "./components/user-menu/user-menu.component";
 import CheckoutComponent from "./Routes/checkout/checkout.component";
 import SignInForm from "./components/sign-in-form/sign-in.component";
 import SignUpForm from "./components/sign-up-form/sign-up-form.component";
+import StartingPageComponent from "./components/starting-page/starting-page.component";
 
 // import {checkUserSession} from "./store/user/user.action";
 import ErrorPageComponent from "./components/error-page/error-page.component";
@@ -31,6 +32,7 @@ const App = () => {
             <Navigation/>
             <Routes location={location} key={location.pathname}>
                 <Route index element={<Home/>}/>
+                <Route exact path='react-testing-app' element={<StartingPageComponent/>}/>
                 <Route exact path='shop' element={
                     <React.Suspense>
                     <LazyShop/>
