@@ -1,7 +1,6 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import Button from "../button/button.component";
-import {emailSignInStart, googleSignInStart} from "../../store/user/user.action";
 import FormInput from "../form-input/form-input.component";
 import AnimationAuthOne from "../../effects/authentication-animation/animation.auth(1)";
 import AnimationAuthTwo from "../../effects/authentication-animation/animation.auth(2)";
@@ -11,6 +10,7 @@ import AnimationAuthFifth from "../../effects/authentication-animation/animation
 import AnimationAuthButton from "../../effects/authentication-animation/Animation.auth.button";
 
 import './sign-in.styles.scss'
+import {signInWithEmail, signInWithGoogle} from "../../store/user/user.utils";
 
 const defaultFormFields = {
     email: '',
@@ -25,15 +25,15 @@ const SignInForm = () => {
     const resetFormField = () => {
         setFormFields(defaultFormFields)
     }
-    const signInWithGoogle = async () => {
-        dispatch(googleSignInStart());
+    const signInWithGoogleHandler = async () => {
+        dispatch(signInWithGoogle());
     }
 
     const submitHandler = async (event) => {
         event.preventDefault();
 
         try {
-            dispatch(emailSignInStart(email, password));
+            dispatch(signInWithEmail({email, password}));
             resetFormField();
 
         } catch (err) {
@@ -102,7 +102,7 @@ const SignInForm = () => {
                         <Button
                             type='button'
                             buttonType='google'
-                            onClick={signInWithGoogle}>
+                            onClick={signInWithGoogleHandler}>
                             Sign in with Google
                         </Button>
                     </div>

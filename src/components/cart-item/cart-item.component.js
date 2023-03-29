@@ -1,19 +1,16 @@
 import "./cart-item.styles.scss";
 
-import {addItemToCart, removeItemFromCard, deleteElement} from "../../store/cart-dropdown/cart-dropdown.action";
-import {useSelector} from "react-redux";
-import {selectCartItems} from "../../store/cart-dropdown/cart-dropdown.selector";
+import {addItemToCart, removeItemFromCart, deleteElement} from "../../store/cart-dropdown/cart-dropdown.reducer";
 import {useDispatch} from "react-redux";
 
 
 const CartItem = ({cartItem}) => {
     const {name, quantity, id, price} = cartItem;
     const dispatch = useDispatch()
-    const cartItems = useSelector(selectCartItems);
 
-    const addItemHandler = () => dispatch(addItemToCart(cartItems, cartItem));
-    const removeItemHandler = () => dispatch(removeItemFromCard(cartItems, cartItem));
-    const deleteItemHandler = () => dispatch(deleteElement(cartItems, cartItem));
+    const addItemHandler = () => dispatch(addItemToCart(cartItem));
+    const removeItemHandler = () => dispatch(removeItemFromCart(cartItem));
+    const deleteItemHandler = () => dispatch(deleteElement(cartItem));
 
     return (
         <div className="card-item-dropdown">

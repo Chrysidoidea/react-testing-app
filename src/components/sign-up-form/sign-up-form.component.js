@@ -8,9 +8,9 @@ import AnimationAuthFifth from "../../effects/authentication-animation/animation
 import AnimationAuthButton from "../../effects/authentication-animation/Animation.auth.button";
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
-import {signUpStart} from "../../store/user/user.action";
 
 import './sign-up-form.styles.scss';
+import {createUser} from "../../store/user/user.utils";
 
 const defaultFormFields = {
     displayName: '',
@@ -45,7 +45,7 @@ const SignUpForm = () => {
         }
 
         try {
-            dispatch(signUpStart(email, password, displayName))
+            dispatch(createUser({email, password, displayName}))
             resetFormField();
 
         } catch (err) {

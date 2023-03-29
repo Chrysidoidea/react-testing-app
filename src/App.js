@@ -12,9 +12,10 @@ import CheckoutComponent from "./Routes/checkout/checkout.component";
 import SignInForm from "./components/sign-in-form/sign-in.component";
 import SignUpForm from "./components/sign-up-form/sign-up-form.component";
 
-import {checkUserSession} from "./store/user/user.action";
+// import {checkUserSession} from "./store/user/user.action";
 import ErrorPageComponent from "./components/error-page/error-page.component";
 import CategoryItemComponent from "./components/category-item/category-item.component";
+import {isUserAuthenticated} from "./store/user/user.utils";
 
 const LazyShop = React.lazy(() => import('./merch/merch-component'));
 const App = () => {
@@ -22,7 +23,7 @@ const App = () => {
     const location = useLocation();
 
     useEffect(() => {
-        dispatch(checkUserSession())
+        dispatch(isUserAuthenticated())
     }, []);
 
     return (

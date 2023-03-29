@@ -2,8 +2,7 @@ import {ReactComponent as MerchIcon} from "../../assets/shopping-bag.svg";
 import {useDispatch, useSelector} from "react-redux";
 
 import {selectCartIsActive, selectCartCount} from "../../store/cart-dropdown/cart-dropdown.selector";
-import {setIsActive} from "../../store/cart-dropdown/cart-dropdown.action";
-
+import {setIsActive} from "../../store/cart-dropdown/cart-dropdown.reducer";
 import './card-icon.styles.scss';
 
 const CartIcon = () => {
@@ -14,7 +13,6 @@ const CartIcon = () => {
 
     const changeHandler = () => {
         dispatch(setIsActive(!isActive))
-
     };
 
     return (

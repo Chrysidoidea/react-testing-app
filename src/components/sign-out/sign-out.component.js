@@ -1,11 +1,12 @@
-import {setIsActive} from "../../store/cart-dropdown/cart-dropdown.action";
+import {setIsActive} from "../../store/cart-dropdown/cart-dropdown.reducer";
 import {selectCartIsActive} from "../../store/cart-dropdown/cart-dropdown.selector";
 import {useDispatch} from "react-redux";
-import {signOutStart} from "../../store/user/user.action";
+// import {signOutStart} from "../../store/user/user.action";
 
 import Button from "../button/button.component";
 import {useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
+import {signOutUser} from "../../store/user/user.utils";
 
 const SignOutButton = () => {
     const dispatch = useDispatch()
@@ -14,8 +15,8 @@ const SignOutButton = () => {
         navigate('/auth');
     }
     const isActive = useSelector(selectCartIsActive);
-    const signOutUser = () => {
-        dispatch(signOutStart());
+    const signOutUserHandler = () => {
+        dispatch(signOutUser());
         if (isActive) {
             dispatch(setIsActive(isActive => !isActive));
         }
@@ -27,7 +28,7 @@ const SignOutButton = () => {
         <Button
             type='button'
             buttonType='undefined'
-            onClick={signOutUser}
+            onClick={signOutUserHandler}
         >
             Sign out
         <

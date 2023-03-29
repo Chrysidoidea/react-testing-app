@@ -8,7 +8,6 @@ import {
     onAuthStateChanged,
     signInWithEmailAndPassword,
     signInWithPopup,
-    signOut,
 } from 'firebase/auth'
 
 import {
@@ -130,6 +129,5 @@ export const getCurrentUser = () => {
     })
 }
 
-export const signOutUser = async () => await signOut(auth);
 
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);

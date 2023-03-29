@@ -4,7 +4,7 @@ import './merch-component.scss'
 import CategoryPreview from "../components/category-preview/category-preview";
 import SpinnerComponent from "../components/spinner/spinner.component";
 import AnimationComponent from "../effects/Animation.component";
-import {fetchCategoriesStart} from "../store/categories/categories.action";
+import {fetchCategoriesAsync} from "../store/categories/categories.utils";
 import {selectCategoriesIsLoading, selectCategoriesMap} from "../store/categories/categories.selector";
 
 
@@ -14,7 +14,7 @@ const Shop = () => {
     const isLoading = useSelector(selectCategoriesIsLoading);
 
     useEffect(() => {
-        dispatch(fetchCategoriesStart());
+        dispatch(fetchCategoriesAsync());
     }, []);
 
     return (

@@ -9,7 +9,7 @@ import {useDispatch} from "react-redux";
 import './authentication.styles.scss';
 import AnimationComponent from "../effects/Animation.component";
 import {useSelector} from "react-redux";
-import {setSignInUpState} from "../store/sign.in.up.switcher/sign.in.up.switcher.action";
+import {setSignInUpState} from "../store/sign.in.up.switcher/sign.in.up.switcher.reducer";
 
 
 const Authentication = () => {

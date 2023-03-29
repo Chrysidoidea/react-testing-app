@@ -1,18 +1,16 @@
 import './merch.styles.scss'
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import Button from "../button/button.component";
-import {addItemToCart} from "../../store/cart-dropdown/cart-dropdown.action";
-import {selectCartItems} from "../../store/cart-dropdown/cart-dropdown.selector";
+import {addItemToCart} from "../../store/cart-dropdown/cart-dropdown.reducer";
 import {LazyLoadImage} from 'react-lazy-load-image-component';
 
 const MerchCard = ({merch}) => {
     const dispatch = useDispatch();
 
     const {id, name, price} = merch;
-    const cartItems = useSelector(selectCartItems);
 
-    const addMerchToCart = () => dispatch(addItemToCart(cartItems, merch));
+    const addMerchToCart = () => dispatch(addItemToCart(merch));
 
     return (
         <div className="merch-card-container" id={id}>
