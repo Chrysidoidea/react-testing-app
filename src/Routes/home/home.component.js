@@ -1,6 +1,6 @@
 import {Outlet} from 'react-router-dom';
-import AnimationComponent from "../../effects/Animation.component";
 
+import AnimationComponent from "../../effects/Animation.component";
 import CharityElementsConstructorComponent
     from "../../components/charity-elements-constructor/charity-elements-constructor.component";
 import charityElements from "../../shop-data";

@@ -1,10 +1,13 @@
-import './checkout.styles.scss'
+import {useSelector} from "react-redux";
 
+import {
+    CheckoutSector,
+    CheckoutHeader,
+    CheckoutBody, TotalPrice, PriceAmount,
+} from './checkout.styles'
 import Button from "../../components/button/button.component";
 import {selectCartItems, selectCartTotal} from "../../store/cart-dropdown/cart-dropdown.selector";
-
 import CheckoutItemComponent from "../../components/checkout-item/checkout-item.component";
-import {useSelector} from "react-redux";
 import PaymentFormComponent from "../../components/payment-form/payment-form.component";
 
 const CheckoutComponent = () => {
@@ -13,25 +16,15 @@ const CheckoutComponent = () => {
 
 
     return (
-        <div className='checkout-container'>
-            <div className='checkout-header'>
-                <div className='header-block'>
+        <CheckoutSector>
+            <CheckoutHeader>
                     <span>Product</span>
-                </div>
-                <div className='header-block'>
                     <span>Name</span>
-                </div>
-                <div className='header-block'>
                     <span>Quantity</span>
-                </div>
-                <div className='header-block'>
                     <span>Price</span>
-                </div>
-                <div className='header-block'>
                     <span>Remove</span>
-                </div>
-            </div>
-            <div className='checkout-body'>
+            </CheckoutHeader>
+            <CheckoutBody>
                 {cartItems.length === 0
                     ? (<div className='empty-checkout-page'>empty space</div>)
                     : (cartItems.map(cartItem => {
@@ -40,16 +33,11 @@ const CheckoutComponent = () => {
                             <CheckoutItemComponent key={id} cartItem={cartItem}/>
                         )
                     }))}
-
-                <div className='total'>
-                    <span >Total: $<span className='total_price'>{cartTotal}</span></span>
-                </div>
-                <div className='checkout-footer'>
+                    <TotalPrice>Total: $<PriceAmount>{cartTotal}</PriceAmount></TotalPrice>
                     <Button>Checkout</Button>
                     <PaymentFormComponent/>
-                </div>
-            </div>
-            </div>
+            </CheckoutBody>
+            </CheckoutSector>
     )
 }
 
