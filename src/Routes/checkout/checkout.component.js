@@ -5,7 +5,7 @@ import {selectCartItems, selectCartTotal} from "../../store/cart-dropdown/cart-d
 
 import CheckoutItemComponent from "../../components/checkout-item/checkout-item.component";
 import {useSelector} from "react-redux";
-
+import PaymentFormComponent from "../../components/payment-form/payment-form.component";
 
 const CheckoutComponent = () => {
     const cartItems = useSelector(selectCartItems);
@@ -46,6 +46,7 @@ const CheckoutComponent = () => {
                 </div>
                 <div className='checkout-footer'>
                     <Button>Checkout</Button>
+                    <PaymentFormComponent/>
                 </div>
             </div>
             </div>

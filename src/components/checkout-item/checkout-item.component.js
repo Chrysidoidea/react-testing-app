@@ -3,6 +3,7 @@ import './checkout-item.styles.scss';
 import {addItemToCart, removeItemFromCart, deleteElement} from "../../store/cart-dropdown/cart-dropdown.reducer";
 import {useDispatch} from "react-redux";
 
+
 const CheckoutItemComponent = ({cartItem}) => {
     const {id, name, quantity, price} = cartItem;
     const dispatch = useDispatch();

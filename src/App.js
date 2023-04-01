@@ -22,6 +22,9 @@ const LazyShop = React.lazy(() => import('./merch/merch-component'));
 const App = () => {
     const dispatch = useDispatch();
     const location = useLocation();
+    useEffect(() => {
+        console.log(process.env.STRIPE_SECRET_KEY)
+    }, [])
 
     useEffect(() => {
         dispatch(isUserAuthenticated())

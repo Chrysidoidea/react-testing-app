@@ -22,6 +22,8 @@ const CharityElementsComponent = ({charityElements}) => {
                         <a
                             href={URL}
                             className="logo-image"
+                            target='_blank'
+                            rel="noreferrer"
                             style={{
                                 backgroundImage: `url(${logoURL})`,
                             }}

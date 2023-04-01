@@ -20,6 +20,9 @@
   }
   .checkout-footer {
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+
   }
 
   .empty-checkout-page {

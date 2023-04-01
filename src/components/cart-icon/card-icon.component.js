@@ -1,5 +1,5 @@
-import {ReactComponent as MerchIcon} from "../../assets/shopping-bag.svg";
 import {useDispatch, useSelector} from "react-redux";
+import {Icon, IconCount, CartIconWrapper} from "../../Routes/navigation/navigation.styles";
 
 import {selectCartIsActive, selectCartCount} from "../../store/cart-dropdown/cart-dropdown.selector";
 import {setIsActive} from "../../store/cart-dropdown/cart-dropdown.reducer";
@@ -15,14 +15,18 @@ const CartIcon = () => {
         dispatch(setIsActive(!isActive))
     };
 
+
     return (
-        <div
+        <CartIconWrapper
             className='card-icon-container'
             onClick={changeHandler}
         >
-            <MerchIcon className='merch-icon'/>
-            <span className='icon-count'>{cartCount}</span>
-        </div>
+            <Icon/>
+            <IconCount
+            >
+                {cartCount}
+            </IconCount>
+        </CartIconWrapper>
     )
 };
 
