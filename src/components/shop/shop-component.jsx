@@ -6,7 +6,10 @@ import CategoryPreview from "./category-preview/category-preview";
 import SpinnerComponent from "../spinner/spinner.component";
 import AnimationComponent from "../../effects/Animation.component";
 import {fetchCategoriesAsync} from "../../store/categories/categories.utils";
-import {selectCategoriesIsLoading, selectCategoriesMap} from "../../store/categories/categories.selector";
+import {
+    selectCategoriesIsLoading,
+    selectCategoriesMap
+} from "../../store/categories/categories.selector";
 
 
 const Shop = () => {

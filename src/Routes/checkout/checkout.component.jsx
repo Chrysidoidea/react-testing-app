@@ -1,7 +1,7 @@
 import {useSelector} from "react-redux";
 
 
-import Button from "../../components/button/button.component";
+import Button, {BUTTON_TYPE_CLASSES} from "../../components/button/button.component";
 import {selectCartItems, selectCartTotal} from "../../store/cart-dropdown/cart-dropdown.selector";
 import CheckoutItemComponent from "../../components/checkout-item/checkout-item.component";
 import PaymentFormComponent from "../../components/payment-form/payment-form.component";
@@ -38,7 +38,7 @@ const CheckoutComponent = () => {
                         )
                     }))}
                 <TotalPrice>Total: $<PriceAmount>{cartTotal}</PriceAmount></TotalPrice>
-                <Button>Checkout</Button>
+                <Button buttonType={BUTTON_TYPE_CLASSES.default}>Checkout</Button>
                 <PaymentFormComponent/>
             </CheckoutBody>
         </CheckoutSector>

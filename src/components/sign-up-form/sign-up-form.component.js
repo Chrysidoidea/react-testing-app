@@ -7,7 +7,7 @@ import AnimationAuthFour from "../../effects/authentication-animation/animation.
 import AnimationAuthFifth from "../../effects/authentication-animation/animation.auth(5)";
 import AnimationAuthButton from "../../effects/authentication-animation/Animation.auth.button";
 import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
 
 import './sign-up-form.styles.scss';
 import {createUser} from "../../store/user/user.utils";
@@ -105,7 +105,12 @@ const SignUpForm = () => {
                     </AnimationAuthFifth>
                     <AnimationAuthButton>
                         <div className='sign-up-button-container'>
-                    <Button type='submit'>Submit</Button>
+                    <Button
+                        type='submit'
+                        buttonType={BUTTON_TYPE_CLASSES.default}
+                    >
+                        Submit
+                    </Button>
                         </div>
                     </AnimationAuthButton>
                 </form>

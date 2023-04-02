@@ -1,6 +1,6 @@
 import {useDispatch} from "react-redux";
 
-import Button from "../../button/button.component";
+import Button, {BUTTON_TYPE_CLASSES} from "../../button/button.component";
 import {addItemToCart} from "../../../store/cart-dropdown/cart-dropdown.reducer";
 
 import {
@@ -34,7 +34,7 @@ const PhotoCard = ({merch}) => {
                 <span>{`${price}$`}</span>
             </PhotoCardFooter>
             <Button
-                buttonType='shopCard'
+                buttonType={BUTTON_TYPE_CLASSES.shopCard}
                 onClick={addMerchToCart}
             >Add to cart
             </Button>

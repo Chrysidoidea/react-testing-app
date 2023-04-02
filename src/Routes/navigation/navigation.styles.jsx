@@ -58,9 +58,8 @@ export const StyledNavLink = styled(NavLink)`
   transition: .5s;
 
   &.active {
-    color: #2e353b;
-    filter: brightness(19%);
-  }
+ 
+    filter: hue-rotate(-20grad) saturate(40) brightness(.7) contrast(0.9);
 `
 export const CartIconWrapper = styled.div`
   position: relative;

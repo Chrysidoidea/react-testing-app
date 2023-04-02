@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
-import Button from "../button/button.component";
+import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
 import FormInput from "../form-input/form-input.component";
 import AnimationAuthOne from "../../effects/authentication-animation/animation.auth(1)";
 import AnimationAuthTwo from "../../effects/authentication-animation/animation.auth(2)";
@@ -95,13 +95,13 @@ const SignInForm = () => {
                     <div className='sign-in-button-container'>
                         <Button
                             type='submit'
-                            buttonType='undefined'
+                            buttonType={BUTTON_TYPE_CLASSES.default}
                         >
                             Sign in
                         </Button>
                         <Button
                             type='button'
-                            buttonType='google'
+                            buttonType={BUTTON_TYPE_CLASSES.google}
                             onClick={signInWithGoogleHandler}>
                             Sign in with Google
                         </Button>

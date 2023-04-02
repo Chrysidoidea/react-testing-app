@@ -1,5 +1,6 @@
 import CharityElementsComponent from "./charity-elements.component";
-import {CategoriesSector,
+import {
+    CategoriesSector,
 } from './charity-elements-styles';
 
 const CharityElementsConstructor = ({ charityElements }) => {
