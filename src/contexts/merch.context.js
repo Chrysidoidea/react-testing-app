@@ -1,5 +1,5 @@
 import {createContext, useState} from "react";
-import MERCH_DATA from '../merch/merch-data.json';
+import MERCH_DATA from '../components/shop/shop-data.json';
 
 export const MerchContext = createContext({
     merch: [],

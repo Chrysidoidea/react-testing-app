@@ -15,10 +15,10 @@ import StartingPageComponent from "./components/starting-page/starting-page.comp
 
 // import {checkUserSession} from "./store/user/user.action";
 import ErrorPageComponent from "./components/error-page/error-page.component";
-import CategoryItemComponent from "./components/category-item/category-item.component";
+import CategoryItemComponent from "./components/shop/category-item/category-item.component";
 import {isUserAuthenticated} from "./store/user/user.utils";
 
-const LazyShop = React.lazy(() => import('./merch/merch-component'));
+const LazyShop = React.lazy(() => import('./components/shop/shop-component'));
 const App = () => {
     const dispatch = useDispatch();
     const location = useLocation();
