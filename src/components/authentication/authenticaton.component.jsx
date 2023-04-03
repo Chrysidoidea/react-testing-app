@@ -1,10 +1,10 @@
 import {Outlet, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 
-import UserMenuComponent from "../components/user-menu/user-menu.component";
-import AnimationComponent from "../effects/Animation.component";
+import UserMenuComponent from "../user-menu/user-menu.component";
+import AnimationComponent from "../../effects/Animation.component";
 
-import {setSignInUpState} from "../store/sign.in.up.switcher/sign.in.up.switcher.reducer";
+import {setSignInUpState} from "../../store/sign.in.up.switcher/sign.in.up.switcher.reducer";
 import {
     AuthenticationContainer,
     AuthenticationSector, SignInHandler

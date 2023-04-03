@@ -1,10 +1,10 @@
 import {useSelector} from "react-redux";
 import {useEffect} from "react";
 
-import SignOutButton from "../sign-out/sign-out.component";
+import SignOutButton from "./sign-out/sign-out.component";
 import AnimationComponent from "../../effects/Animation.component";
 import {
-    Author,
+    Author, FirstLetter,
     UserMenu,
     UserMenuSector
 
@@ -23,9 +23,9 @@ const UserMenuComponent = () => {
                 <UserMenu>
                     <h2>Welcome, {userName}!</h2>
                     <h3>Thank you for joining my "Hello World" project.</h3>
-                    <p>As a token of appreciation, please enjoy this short science-fiction story.</p>
+                    <p>As a token of appreciation, please enjoy this short story.</p>
                     <p>I hope you like it!</p>
-                    <span>      <span className='firstLetter'>O</span>nce upon a time, in a small town nestled between rolling hills and a crystal-clear lake, lived a young girl named Amelia. Growing up, Amelia was always curious about the world around her. She spent her days exploring the nearby woods, observing the plants and animals, and asking her parents countless questions about the mysteries of life.
+                    <span>      <FirstLetter>O</FirstLetter>nce upon a time, in a small town nestled between rolling hills and a crystal-clear lake, lived a young girl named Amelia. Growing up, Amelia was always curious about the world around her. She spent her days exploring the nearby woods, observing the plants and animals, and asking her parents countless questions about the mysteries of life.
 
 Amelia's parents were loving and supportive but could only offer so much in terms of answers. <br/>       As Amelia grew older, her thirst for knowledge only intensified. She would often visit the town library, but even there, she found the resources limited. The small town was not known for its scientific community, and Amelia found it difficult to satisfy her curiosity.
 

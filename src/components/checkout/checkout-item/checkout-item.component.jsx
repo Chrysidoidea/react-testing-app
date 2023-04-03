@@ -6,7 +6,7 @@ import {
 
 } from './checkout-item.styles';
 
-import {addItemToCart, removeItemFromCart, deleteElement} from "../../store/cart-dropdown/cart-dropdown.reducer";
+import {addItemToCart, removeItemFromCart, deleteElement} from "../../../store/cart-dropdown/cart-dropdown.reducer";
 import {useDispatch} from "react-redux";
 
 

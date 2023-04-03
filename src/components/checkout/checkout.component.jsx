@@ -1,10 +1,10 @@
 import {useSelector} from "react-redux";
 
 
-import Button, {BUTTON_TYPE_CLASSES} from "../../components/button/button.component";
+import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
 import {selectCartItems, selectCartTotal} from "../../store/cart-dropdown/cart-dropdown.selector";
-import CheckoutItemComponent from "../../components/checkout-item/checkout-item.component";
-import PaymentFormComponent from "../../components/payment-form/payment-form.component";
+import CheckoutItemComponent from "./checkout-item/checkout-item.component";
+import PaymentFormComponent from "../payment-form/payment-form.component";
 import {
     CheckoutSector,
     CheckoutHeader,

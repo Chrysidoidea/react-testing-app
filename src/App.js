@@ -6,11 +6,11 @@ import {useDispatch} from "react-redux";
 
 import Home from "./Routes/home/home.component";
 import Navigation from "./Routes/navigation/navigation.component";
-import Authentication from "./authentication/authenticaton.component";
+import Authentication from "./components/authentication/authenticaton.component";
 import UserMenuComponent from "./components/user-menu/user-menu.component";
-import CheckoutComponent from "./Routes/checkout/checkout.component";
-import SignInForm from "./components/sign-in-form/sign-in.component";
-import SignUpForm from "./components/sign-up-form/sign-up-form.component";
+import CheckoutComponent from "./components/checkout/checkout.component";
+import SignInForm from "./components/authentication/sign-in-form/sign-in.component";
+import SignUpForm from "./components/authentication/sign-up-form/sign-up-form.component";
 import StartingPageComponent from "./components/starting-page/starting-page.component";
 
 // import {checkUserSession} from "./store/user/user.action";
