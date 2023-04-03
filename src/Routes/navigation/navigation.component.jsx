@@ -3,7 +3,7 @@ import {motion} from "framer-motion";
 import {useSelector} from "react-redux";
 
 import Logo from "./navigation.logo.component";
-import CardIcon from "../../components/cart-icon/card-icon.component";
+import CardIcon from "../../components/cart-icon/cart-icon.component";
 import CardDropdown from "../../components/card-dropdown/cart-dropdown.component";
 import {
     NavigationContainer,

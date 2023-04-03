@@ -64,6 +64,7 @@ export const StyledNavLink = styled(NavLink)`
 export const CartIconWrapper = styled.div`
   position: relative;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-content: center;
   width: 2rem;
