@@ -1,4 +1,4 @@
-import AnimationComponent from "../../effects/Animation.component";
+import AnimationComponent from "../../../effects/Animation.component";
 import {
     CategoryBodyContainer,
     CategoryContainer,

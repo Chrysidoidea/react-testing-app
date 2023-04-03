@@ -51,10 +51,12 @@ export const ImageContainer = styled.div`
 export const CategoryBodyContainer = styled.div`
   position: absolute;
   width: 50rem;
-  background: rgba(255, 255, 255, 0.2);
-  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0));
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.15);
+  border-width: 2px 0 0 2px ;
   transition: 0.2s;
-  border-radius: .6rem;
+  border-radius: 1.2rem;
   display: flex;
   flex-direction: column;
   padding: 2rem;

@@ -4,7 +4,7 @@ import React, {useEffect} from "react";
 import {useDispatch} from "react-redux";
 
 
-import Home from "./Routes/home/home.component";
+import Home from "./components/home/home.component";
 import Navigation from "./Routes/navigation/navigation.component";
 import Authentication from "./components/authentication/authenticaton.component";
 import UserMenuComponent from "./components/user-menu/user-menu.component";

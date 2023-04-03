@@ -3,7 +3,7 @@ import {Outlet} from 'react-router-dom';
 import AnimationComponent from "../../effects/Animation.component";
 import charityElements from "../../shop-data";
 import CharityElementsConstructor
-    from "../../components/charity-elements-object/charity-elements-constructor.component";
+    from "./charity-elements/charity-elements-constructor.component";
 
 const Home = () => {
 
