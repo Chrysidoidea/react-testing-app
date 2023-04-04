@@ -12,4 +12,16 @@ Welcome to the source code repository of react-testing-app, an app that showcase
 - User registration and sign-in functionality, with the ability to add items to a basket and proceed to a pseudo checkout
 - Smooth animations for an engaging user experience
 
-Explore this repository to see the inner workings of [react-testing-app] and feel free to provide feedback or suggestions for improvement. Happy coding!
+### Libraries & Technologies Used
+- Firebase
+- Framer-motion
+- React-lazy-load-image-component
+- React-router-dom
+- React-redux, Redux-logger
+- Redux-persist
+- Styled-components
+- Dotenv
+- Stripe-js
+- Toolkit
+
+Explore this repository to see the inner workings of [react-testing-app] and feel free to provide feedback or suggestions for improvement. Happy hacking!
