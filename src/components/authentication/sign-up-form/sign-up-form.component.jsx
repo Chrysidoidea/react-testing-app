@@ -7,9 +7,10 @@ import AnimationAuthFour from "../../../effects/authentication-animation/animati
 import AnimationAuthFifth from "../../../effects/authentication-animation/animation.auth(5)";
 import AnimationAuthButton from "../../../effects/authentication-animation/Animation.auth.button";
 import FormInput from "../../form-input/form-input.component";
-import Button, {BUTTON_TYPE_CLASSES} from "../../button/button.component";
+import Button from "../../button/button.component";
 
-import './sign-up-form.styles.scss';
+import {SignUpContainer} from './sign-up-form.styles';
+import {AuthenticationButtonContainer} from '../authentication.styles'
 import {createUser} from "../../../store/user/user.utils";
 
 const defaultFormFields = {
@@ -58,12 +59,12 @@ const SignUpForm = () => {
     }
 
     return (
-            <div className='sign-up-container'>
-                <AnimationAuthOne>
+        <SignUpContainer>
+            <AnimationAuthOne>
                 <h2>Sign up via Mail & Password</h2>
-                </AnimationAuthOne>
-                <form onSubmit={submitHandler}>
-                    <AnimationAuthTwo>
+            </AnimationAuthOne>
+            <form onSubmit={submitHandler}>
+                <AnimationAuthTwo>
                     <FormInput
                         label='Name'
                         type='text'
@@ -72,8 +73,8 @@ const SignUpForm = () => {
                         name='displayName'
                         value={displayName}
                     />
-                    </AnimationAuthTwo>
-                    <AnimationAuthThree>
+                </AnimationAuthTwo>
+                <AnimationAuthThree>
                     <FormInput
                         label='Email'
                         type='email'
@@ -82,8 +83,8 @@ const SignUpForm = () => {
                         name='email'
                         value={email}
                     />
-                    </AnimationAuthThree>
-                    <AnimationAuthFour>
+                </AnimationAuthThree>
+                <AnimationAuthFour>
                     <FormInput
                         label='Password'
                         type='password'
@@ -92,8 +93,8 @@ const SignUpForm = () => {
                         name='password'
                         value={password}
                     />
-                    </AnimationAuthFour>
-                    <AnimationAuthFifth>
+                </AnimationAuthFour>
+                <AnimationAuthFifth>
                     <FormInput
                         label='Confirm Password'
                         type='password'
@@ -102,19 +103,16 @@ const SignUpForm = () => {
                         name='confirmPassword'
                         value={confirmPassword}
                     />
-                    </AnimationAuthFifth>
-                    <AnimationAuthButton>
-                        <div className='sign-up-button-container'>
-                    <Button
-                        type='submit'
-                        buttonType={BUTTON_TYPE_CLASSES.default}
-                    >
-                        Submit
-                    </Button>
-                        </div>
-                    </AnimationAuthButton>
-                </form>
-            </div>
+                </AnimationAuthFifth>
+                <AnimationAuthButton>
+                    <AuthenticationButtonContainer>
+                        <Button type='submit'>
+                            Submit
+                        </Button>
+                    </AuthenticationButtonContainer>
+                </AnimationAuthButton>
+            </form>
+        </SignUpContainer>
     )
 }
 

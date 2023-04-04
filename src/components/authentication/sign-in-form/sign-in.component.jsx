@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
+
 import Button, {BUTTON_TYPE_CLASSES} from "../../button/button.component";
 import FormInput from "../../form-input/form-input.component";
 import AnimationAuthOne from "../../../effects/authentication-animation/animation.auth(1)";
@@ -9,7 +10,10 @@ import AnimationAuthFour from "../../../effects/authentication-animation/animati
 import AnimationAuthFifth from "../../../effects/authentication-animation/animation.auth(5)";
 import AnimationAuthButton from "../../../effects/authentication-animation/Animation.auth.button";
 
-import './sign-in.styles.scss'
+import {
+    SignInComponents
+} from './sign-in.styles';
+import {AuthenticationButtonContainer} from '../authentication.styles'
 import {signInWithEmail, signInWithGoogle} from "../../../store/user/user.utils";
 
 const defaultFormFields = {
@@ -60,7 +64,7 @@ const SignInForm = () => {
     };
 
     return (
-            <div className='sign-in-container'>
+            <SignInComponents>
                 <AnimationAuthOne>
                 <h2>Enter account credentials</h2>
                 </AnimationAuthOne>
@@ -92,10 +96,9 @@ const SignInForm = () => {
                     />
                     </AnimationAuthFifth>
                     <AnimationAuthButton>
-                    <div className='sign-in-button-container'>
+                    <AuthenticationButtonContainer>
                         <Button
                             type='submit'
-                            buttonType={BUTTON_TYPE_CLASSES.default}
                         >
                             Sign in
                         </Button>
@@ -103,12 +106,12 @@ const SignInForm = () => {
                             type='button'
                             buttonType={BUTTON_TYPE_CLASSES.google}
                             onClick={signInWithGoogleHandler}>
-                            Sign in with Google
+                            Google sign
                         </Button>
-                    </div>
+                    </AuthenticationButtonContainer>
                     </AnimationAuthButton>
                 </form>
-            </div>
+            </SignInComponents>
     )
 }
 
