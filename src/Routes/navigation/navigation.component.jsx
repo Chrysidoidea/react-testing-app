@@ -56,7 +56,7 @@ const Navigation = () => {
                             transition='effect'
                         >
                             <StyledNavLink className='nav-link upper-case' to='/shop'>
-                                Merch
+                                Shop
                             </StyledNavLink>
                         </motion.div>
                     </NavigationLinksContainer>
