@@ -36,5 +36,17 @@ export const Image = styled.img`
   height: 100%;
 `;
 export const QuantityHandlerContainer = styled.div`
-    display: flex;
+  display: flex;
+
+  & > div {
+    font-size: 1rem;
+    cursor: pointer;
+    
+    &:first-child {
+      margin-right: .3rem;
+    }
+    &:last-child {
+      margin-left: .3rem;
+    }
+  }
 `;

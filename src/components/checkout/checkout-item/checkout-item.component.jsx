@@ -1,9 +1,8 @@
 import {
     CheckoutItemsContainer,
     Image,
-    ImageContainer, QuantityHandlerContainer,
-
-
+    ImageContainer,
+    QuantityHandlerContainer,
 } from './checkout-item.styles';
 
 import {addItemToCart, removeItemFromCart, deleteElement} from "../../../store/cart-dropdown/cart-dropdown.reducer";
