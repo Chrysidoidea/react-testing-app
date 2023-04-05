@@ -35,7 +35,7 @@ const App = () => {
     return (
         <AnimatePresence wait>
             <Navigation/>
-            {isActive && <CartDropdown/>}
+            {isActive ? <CartDropdown/> : null}
             <Routes location={location} key={location.pathname}>
                 <Route index element={<Home/>}/>
                 <Route exact path='react-testing-app' element={<StartingPageComponent/>}/>
