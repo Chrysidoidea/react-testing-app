@@ -1,9 +1,9 @@
 import {Routes, Route, useLocation} from 'react-router-dom';
 import {AnimatePresence} from "framer-motion";
 import React, {useEffect} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
-
+import CartDropdown from "./components/card-dropdown/cart-dropdown.component";
 import Home from "./components/home/home.component";
 import Navigation from "./Routes/navigation/navigation.component";
 import Authentication from "./components/authentication/authenticaton.component";
@@ -13,13 +13,15 @@ import SignInForm from "./components/authentication/sign-in-form/sign-in.compone
 import SignUpForm from "./components/authentication/sign-up-form/sign-up-form.component";
 import StartingPageComponent from "./components/starting-page/starting-page.component";
 
-// import {checkUserSession} from "./store/user/user.action";
 import ErrorPageComponent from "./components/error-page/error-page.component";
 import CategoryItemComponent from "./components/shop/category-item/category-item.component";
 import {isUserAuthenticated} from "./store/user/user.utils";
+import {selectCartIsActive} from "./store/cart-dropdown/cart-dropdown.selector";
+
 
 const LazyShop = React.lazy(() => import('./components/shop/shop-component'));
 const App = () => {
+    const isActive = useSelector(selectCartIsActive);
     const dispatch = useDispatch();
     const location = useLocation();
     useEffect(() => {
@@ -33,6 +35,7 @@ const App = () => {
     return (
         <AnimatePresence wait>
             <Navigation/>
+            {isActive && <CartDropdown/>}
             <Routes location={location} key={location.pathname}>
                 <Route index element={<Home/>}/>
                 <Route exact path='react-testing-app' element={<StartingPageComponent/>}/>

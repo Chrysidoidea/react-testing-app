@@ -4,7 +4,6 @@ import {useSelector} from "react-redux";
 
 import Logo from "./navigation.logo.component";
 import CardIcon from "../../components/cart-icon/cart-icon.component";
-import CardDropdown from "../../components/card-dropdown/cart-dropdown.component";
 import {
     NavigationContainer,
     NavigationElements,
@@ -98,8 +97,8 @@ const Navigation = () => {
                     </NavigationLinksContainer>
 
                 </NavigationElements>
-                <CardDropdown/>
             </NavigationContainer>
+
 
             <Outlet/>
 
