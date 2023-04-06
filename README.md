@@ -29,3 +29,5 @@ Welcome to the source code repository of react-testing-app, an app that showcase
 
 
 Explore this repository to see the inner workings of [react-testing-app] and feel free to provide feedback or suggestions for improvement. Happy hacking!
+
+### Please be aware that this has not been optimized for screens with resolutions of 2k or higher.
