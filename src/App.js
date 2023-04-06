@@ -24,6 +24,8 @@ const App = () => {
     const isActive = useSelector(selectCartIsActive);
     const dispatch = useDispatch();
     const location = useLocation();
+
+
     useEffect(() => {
         console.log(process.env.STRIPE_SECRET_KEY)
     }, [])

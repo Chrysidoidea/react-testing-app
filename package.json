@@ -9,7 +9,6 @@
     "@stripe/stripe-js": "^1.52.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "dotenv": "^16.0.3",
@@ -25,8 +24,8 @@
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "redux-saga": "^1.2.3",
-    "sass": "^1.56.1",
+    "reselect": "^4.1.7",
+    "sass": "^1.60.0",
     "stripe": "^11.17.0",
     "styled-components": "^5.3.9",
     "web-vitals": "^2.1.4"

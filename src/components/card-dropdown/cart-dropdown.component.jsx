@@ -1,4 +1,5 @@
 import {useSelector} from "react-redux";
+
 import {useNavigate} from 'react-router-dom'
 
 import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
@@ -27,8 +28,12 @@ const CartDropdown = () => {
         navigate('/checkout');
     }
 
+
+
     return (
-        <CartDropdownContainer className={isActive ? "active" : ''}>
+        <CartDropdownContainer
+            className={isActive ? "active" : ''}
+        >
             <CartDropdownItems>
                 {cartItems.length === 0
                     ? (<CartDropdownEmpty>empty space</CartDropdownEmpty>)

@@ -2,8 +2,11 @@
 
 Hi $username, You've just discovered a fantastic platform where you can explore and support amazing animal charity organizations, and find unique animals photos. This project was created as a portfolio to showcase my skills, but I also hope you enjoy your time here. Navigate with ease using the simple navbar at the top of the screen, and get ready to dive into the world of animals!
 
+
 # CHARITY-APP
 Welcome to the source code repository of react-testing-app, an app that showcases my skills in web development and design! This app serves as a portfolio project, and it aims to connect users with animal charity organizations while providing an attractive platform to explore and purchase stunning animal photographs.
+## Here you can visit the page:
+# https://chrysidoidea.github.io/react-testing-app/
 
 ### Features
 - Intuitive navigation with a clean and minimalistic top navbar
