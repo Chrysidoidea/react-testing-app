@@ -25,7 +25,7 @@ const PhotoCard = ({merch}) => {
                     alt={`${name} — ${id}`}
                     effect="blur"
                     delayTime="1000"
-                    placeholderSrc={`https://ik.imagekit.io/pc5qtjvyw/Charity-proj/specimen_${id}.jpg?updatedAt=1679337974373`}
+                    placeholderSrc={`https://ik.imagekit.io/pc5qtjvyw/Charity-proj/specimen_${id}.jpg`}
                 />
             </ImageWrapper>
 

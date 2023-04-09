@@ -22,7 +22,7 @@ const CheckoutItemComponent = ({cartItem}) => {
     return (
         <CheckoutItemsContainer>
             <ImageContainer>
-                <Image src={process.env.PUBLIC_URL + `/merch/specimen_${id}.jpg`} alt={name}/>
+                <Image src={`https://ik.imagekit.io/pc5qtjvyw/Charity-proj/specimen_${id}.jpg`} alt={name}/>
             </ImageContainer>
             <span>{name}</span>
             <QuantityHandlerContainer>
