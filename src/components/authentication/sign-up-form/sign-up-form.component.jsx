@@ -9,15 +9,15 @@ import AnimationAuthButton from "../../../effects/authentication-animation/Anima
 import FormInput from "../../form-input/form-input.component";
 import Button from "../../button/button.component";
 
-import {SignUpContainer} from './sign-up-form.styles';
-import {AuthenticationButtonContainer} from '../authentication.styles'
+import {SignUpContainer} from "./sign-up-form.styles";
+import {AuthenticationButtonContainer} from "../authentication.styles"
 import {createUser} from "../../../store/user/user.utils";
 
 const defaultFormFields = {
-    displayName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
+    displayName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
 };
 
 const SignUpForm = () => {
@@ -41,7 +41,7 @@ const SignUpForm = () => {
         event.preventDefault();
 
         if (password !== confirmPassword) {
-            alert('passwords doesn\'t match');
+            alert("passwords does not match");
             return;
         }
 
@@ -50,8 +50,8 @@ const SignUpForm = () => {
             resetFormField();
 
         } catch (err) {
-            if (err.code === 'auth/email-already-in-use') {
-                console.log('email already in use')
+            if (err.code === "auth/email-already-in-use") {
+                console.log("email already in use")
             } else {
                 console.log(err)
             }
@@ -66,47 +66,47 @@ const SignUpForm = () => {
             <form onSubmit={submitHandler}>
                 <AnimationAuthTwo>
                     <FormInput
-                        label='Name'
-                        type='text'
+                        label="Name"
+                        type="text"
                         required
                         onChange={changeHandler}
-                        name='displayName'
+                        name="displayName"
                         value={displayName}
                     />
                 </AnimationAuthTwo>
                 <AnimationAuthThree>
                     <FormInput
-                        label='Email'
-                        type='email'
+                        label="Email"
+                        type="email"
                         required
                         onChange={changeHandler}
-                        name='email'
+                        name="email"
                         value={email}
                     />
                 </AnimationAuthThree>
                 <AnimationAuthFour>
                     <FormInput
-                        label='Password'
-                        type='password'
+                        label="Password"
+                        type="password"
                         required
                         onChange={changeHandler}
-                        name='password'
+                        name="password"
                         value={password}
                     />
                 </AnimationAuthFour>
                 <AnimationAuthFifth>
                     <FormInput
-                        label='Confirm Password'
-                        type='password'
+                        label="Confirm Password"
+                        type="password"
                         required
                         onChange={changeHandler}
-                        name='confirmPassword'
+                        name="confirmPassword"
                         value={confirmPassword}
                     />
                 </AnimationAuthFifth>
                 <AnimationAuthButton>
                     <AuthenticationButtonContainer>
-                        <Button type='submit'>
+                        <Button type="submit">
                             Submit
                         </Button>
                     </AuthenticationButtonContainer>

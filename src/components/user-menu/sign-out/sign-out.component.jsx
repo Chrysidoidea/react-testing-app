@@ -10,7 +10,7 @@ const SignOutButton = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const goAway = () => {
-        navigate('/auth');
+        navigate("/auth");
     }
     const isActive = useSelector(selectCartIsActive);
     const signOutUserHandler = () => {
@@ -23,7 +23,7 @@ const SignOutButton = () => {
 
     return (
         <Button
-            type='button'
+            type="button"
             onClick={signOutUserHandler}
         >
             Sign out

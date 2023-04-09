@@ -1,7 +1,7 @@
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
-import {ShopContainer} from './shop.styles'
+import {ShopContainer} from "./shop.styles"
 import CategoryPreview from "./category-preview/category-preview";
 import SpinnerComponent from "../spinner/spinner.component";
 import AnimationComponent from "../../effects/Animation.component";

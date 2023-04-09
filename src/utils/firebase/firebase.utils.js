@@ -1,5 +1,5 @@
-import {initializeApp} from 'firebase/app';
-import 'firebase/compat/auth';
+import {initializeApp} from "firebase/app";
+import "firebase/compat/auth";
 
 import {
     createUserWithEmailAndPassword,
@@ -8,7 +8,7 @@ import {
     onAuthStateChanged,
     signInWithEmailAndPassword,
     signInWithPopup,
-} from 'firebase/auth'
+} from "firebase/auth"
 
 import {
     collection,
@@ -19,7 +19,7 @@ import {
     query,
     setDoc,
     writeBatch,
-} from 'firebase/firestore'
+} from "firebase/firestore"
 
 const firebaseConfig = {
 
@@ -48,7 +48,7 @@ export const database = getFirestore();
 export const addCollectionAndDocuments = async (
     collectionKey,
     objectsToAdd,
-    field = 'title',
+    field = "title",
 ) => {
 
     const collectionRef = collection(database, collectionKey);
@@ -71,7 +71,7 @@ export const addCollectionAndDocuments = async (
 
 export const getCategoriesAndDocuments = async () => {
 
-    const collectionRef = collection(database, 'merch');
+    const collectionRef = collection(database, "merch");
     const q = query(collectionRef);
 
     const querySnapshot = await getDocs(q);
@@ -82,7 +82,7 @@ export const getCategoriesAndDocuments = async () => {
 export const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) => {
     if (!userAuth) return;
 
-    const userDocRef = doc(database, 'users', userAuth.uid);
+    const userDocRef = doc(database, "users", userAuth.uid);
 
     const userSnapshot = await getDoc(userDocRef);
 
@@ -98,7 +98,7 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInfo = {}) 
                 ...additionalInfo,
             });
         } catch (error) {
-            console.log('Sorry but we have some issue:', error.message);
+            console.log("Sorry but we have some issue:", error.message);
         }
     }
 

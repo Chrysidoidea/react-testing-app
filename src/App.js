@@ -1,4 +1,4 @@
-import {Routes, Route, useLocation} from 'react-router-dom';
+import {Routes, Route, useLocation} from "react-router-dom";
 import {AnimatePresence} from "framer-motion";
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
@@ -19,7 +19,7 @@ import {isUserAuthenticated} from "./store/user/user.utils";
 import {selectCartIsActive} from "./store/cart-dropdown/cart-dropdown.selector";
 
 
-const LazyShop = React.lazy(() => import('./components/shop/shop-component'));
+const LazyShop = React.lazy(() => import("./components/shop/shop-component"));
 const App = () => {
     const isActive = useSelector(selectCartIsActive);
     const dispatch = useDispatch();
@@ -37,24 +37,24 @@ const App = () => {
     return (
         <AnimatePresence wait>
             <Navigation/>
-            {isActive ? <CartDropdown/> : null}
+            {isActive ? <CartDropdown key={"cdd1"}/> : null}
             <Routes location={location} key={location.pathname}>
                 <Route index element={<Home/>}/>
-                <Route exact path='react-testing-app' element={<StartingPageComponent/>}/>
-                <Route exact path='shop' element={
+                <Route exact path="react-testing-app" element={<StartingPageComponent/>}/>
+                <Route exact path="shop" element={
                     <React.Suspense>
                     <LazyShop/>
                     </React.Suspense>
                 }/>
-                <Route path='shop/:name' element={<CategoryItemComponent/>}/>
-                <Route exact path='auth' element={<Authentication/>}>
+                <Route path="shop/:name" element={<CategoryItemComponent/>}/>
+                <Route exact path="auth" element={<Authentication/>}>
                     <Route index element={<SignInForm/>}/>
-                    <Route exact path='auth' element={<UserMenuComponent/>}/>
-                    <Route exact path='sign-in' element={<SignInForm/>}/>
-                    <Route exact path='sign-up' element={<SignUpForm/>}/>
+                    <Route exact path="auth" element={<UserMenuComponent/>}/>
+                    <Route exact path="sign-in" element={<SignInForm/>}/>
+                    <Route exact path="sign-up" element={<SignUpForm/>}/>
                 </Route>
-                <Route exact path='checkout' element={<CheckoutComponent/>}/>
-                <Route exact path='*' element={<ErrorPageComponent/>}/>
+                <Route exact path="checkout" element={<CheckoutComponent/>}/>
+                <Route exact path="*" element={<ErrorPageComponent/>}/>
             </Routes>
 
         </AnimatePresence>

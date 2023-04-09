@@ -7,7 +7,7 @@ import {
     DecrementButton,
     IncrementButton,
 
-} from './cart-item.styles';
+} from "./cart-item.styles";
 
 import {addItemToCart, removeItemFromCart, deleteElement} from "../../../store/cart-dropdown/cart-dropdown.reducer";
 import {useDispatch} from "react-redux";

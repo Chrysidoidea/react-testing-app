@@ -16,7 +16,7 @@ const CartIcon = () => {
 
     return (
         <CartIconWrapper
-            className='card-icon-container'
+            className="card-icon-container"
             onClick={changeHandler}
         >
             <Icon/>

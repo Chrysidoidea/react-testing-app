@@ -1,4 +1,4 @@
-import {Outlet} from 'react-router-dom';
+import {Outlet} from "react-router-dom";
 
 import AnimationComponent from "../../effects/Animation.component";
 import charityElements from "../../shop-data";

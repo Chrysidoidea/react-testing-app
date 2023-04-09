@@ -3,7 +3,7 @@ import {
     Image,
     ImageContainer,
     QuantityHandlerContainer,
-} from './checkout-item.styles';
+} from "./checkout-item.styles";
 
 import {addItemToCart, removeItemFromCart, deleteElement} from "../../../store/cart-dropdown/cart-dropdown.reducer";
 import {useDispatch} from "react-redux";

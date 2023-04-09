@@ -12,7 +12,7 @@ import {
     TotalPrice,
     PriceAmount,
     EmptySpaceElement,
-} from './checkout.styles';
+} from "./checkout.styles";
 
 const CheckoutComponent = () => {
     const cartItems = useSelector(selectCartItems);

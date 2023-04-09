@@ -1,6 +1,6 @@
 import {useSelector} from "react-redux";
 
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from "react-router-dom"
 
 import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
 import CartItem from "./cart-item/cart-item.component";
@@ -14,7 +14,7 @@ import {
     CartDropdownEmpty,
     CartDropdownItems,
     CartDropdownTotalPrice
-} from './cart-dropdown.styles'
+} from "./cart-dropdown.styles"
 
 
 const CartDropdown = () => {
@@ -25,14 +25,14 @@ const CartDropdown = () => {
     const navigate = useNavigate();
 
     const toCheckoutHandler = () => {
-        navigate('/checkout');
+        navigate("/checkout");
     }
 
 
 
     return (
         <CartDropdownContainer
-            className={isActive ? "active" : ''}
+            className={isActive ? "active" : ""}
         >
             <CartDropdownItems>
                 {cartItems.length === 0

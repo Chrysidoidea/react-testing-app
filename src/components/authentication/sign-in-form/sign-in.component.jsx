@@ -12,13 +12,13 @@ import AnimationAuthButton from "../../../effects/authentication-animation/Anima
 
 import {
     SignInComponents
-} from './sign-in.styles';
-import {AuthenticationButtonContainer} from '../authentication.styles'
+} from "./sign-in.styles";
+import {AuthenticationButtonContainer} from "../authentication.styles"
 import {signInWithEmail, signInWithGoogle} from "../../../store/user/user.utils";
 
 const defaultFormFields = {
-    email: '',
-    password: '',
+    email: "",
+    password: "",
 };
 
 const SignInForm = () => {
@@ -44,10 +44,10 @@ const SignInForm = () => {
 
             switch (err.code) {
                 case "auth/wrong-password":
-                    alert('wrong password entered');
+                    alert("wrong password entered");
                     break;
                 case "auth/user-not-found":
-                    alert('entered user doesn\'t exist');
+                    alert("entered user does not exist");
                     break;
                 default:
                     console.log(err)
@@ -77,33 +77,33 @@ const SignInForm = () => {
                 <form onSubmit={submitHandler}>
                     <AnimationAuthFour>
                     <FormInput
-                        label='Email'
-                        type='email'
+                        label="Email"
+                        type="email"
                         required
                         onChange={changeHandler}
-                        name='email'
+                        name="email"
                         value={email}
                     />
                     </AnimationAuthFour>
                     <AnimationAuthFifth>
                     <FormInput
-                        label='Password'
-                        type='password'
+                        label="Password"
+                        type="password"
                         required
                         onChange={changeHandler}
-                        name='password'
+                        name="password"
                         value={password}
                     />
                     </AnimationAuthFifth>
                     <AnimationAuthButton>
                     <AuthenticationButtonContainer>
                         <Button
-                            type='submit'
+                            type="submit"
                         >
                             Sign in
                         </Button>
                         <Button
-                            type='button'
+                            type="button"
                             buttonType={BUTTON_TYPE_CLASSES.google}
                             onClick={signInWithGoogleHandler}>
                             Google sign

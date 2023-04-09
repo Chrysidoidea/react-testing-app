@@ -8,7 +8,7 @@ import {setSignInUpState} from "../../store/sign.in.up.switcher/sign.in.up.switc
 import {
     AuthenticationContainer,
     AuthenticationSector, SignInHandler
-} from './authentication.styles'
+} from "./authentication.styles"
 
 const Authentication = () => {
     const navigate = useNavigate();
@@ -19,14 +19,14 @@ const Authentication = () => {
 
 
     const signIn = () => {
-        navigate('sign-up');
+        navigate("sign-up");
         setTimeout(() => {
             dispatch(setSignInUpState(false))
         }, 200)
 
     }
     const signUp = () => {
-        navigate('sign-in');
+        navigate("sign-in");
         setTimeout(() => {
             dispatch(setSignInUpState(true))
         }, 200)

@@ -20,7 +20,7 @@ const CharityElementsComponent = ({charityElements}) => {
                     <EntranceLogo>
                         <EntranceLogoLink
                             href={URL}
-                            target='_blank'
+                            target="_blank"
                             rel="noreferrer"
                         >
                             {info}
@@ -28,12 +28,12 @@ const CharityElementsComponent = ({charityElements}) => {
                         <EntranceLogoImage
                             href={URL}
                             className="logo-image"
-                            target='_blank'
+                            target="_blank"
                             rel="noreferrer"
                             logoURL={logoURL}
                             aria-label="charity name logo"
                         >
-                            <span style={{display: 'none'}}>charity name logo</span>
+                            <span style={{display: "none"}}>charity name logo</span>
                         </EntranceLogoImage>
                     </EntranceLogo>
                 </CategoryBodyContainer>

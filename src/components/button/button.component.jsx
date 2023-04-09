@@ -3,13 +3,13 @@ import {
     GoogleSignButton,
     InvertedButton,
     PictureButton,
-} from './button.styles'
+} from "./button.styles"
 
 export const BUTTON_TYPE_CLASSES = {
     default: "default-button",
     google: "google-authentication",
     inverted: "inverted",
-    shopCard: 'shopCard',
+    shopCard: "shopCard",
 };
 const buttonTypeSwitcher = (buttonType = BUTTON_TYPE_CLASSES.default) => (
     {

@@ -38,11 +38,11 @@ const Navigation = () => {
             <NavigationContainer>
                 <motion.div
                     variants={animaVariants}
-                    whileHover='hover'
-                    whileTap='tap'
-                    transition='effect'
+                    whileHover="hover"
+                    whileTap="tap"
+                    transition="effect"
                 >
-                    <StyledNavLink to='/'>
+                    <StyledNavLink to="/">
                         <Logo/>
                     </StyledNavLink>
                 </motion.div>
@@ -50,11 +50,11 @@ const Navigation = () => {
                     <NavigationLinksContainer>
                         <motion.div
                             variants={animaVariants}
-                            whileHover='hover'
-                            whileTap='tap'
-                            transition='effect'
+                            whileHover="hover"
+                            whileTap="tap"
+                            transition="effect"
                         >
-                            <StyledNavLink className='nav-link upper-case' to='/shop'>
+                            <StyledNavLink className="nav-link upper-case" to="/shop">
                                 Shop
                             </StyledNavLink>
                         </motion.div>
@@ -65,22 +65,22 @@ const Navigation = () => {
                             <UserSettingsAndBagWrapper>
                                 <motion.div
                                     variants={animaVariants}
-                                    whileHover='hover'
-                                    whileTap='tap'
-                                    transition='effect'
+                                    whileHover="hover"
+                                    whileTap="tap"
+                                    transition="effect"
                                 >
-                                    <StyledNavLink className='nav-link upper-case' to='/auth'>Settings</StyledNavLink>
+                                    <StyledNavLink className="nav-link upper-case" to="/auth">Settings</StyledNavLink>
                                 </motion.div>
 
                             </UserSettingsAndBagWrapper>
                         ) : (
                             <motion.div
                                 variants={animaVariants}
-                                whileHover='hover'
-                                whileTap='tap'
-                                transition='effect'
+                                whileHover="hover"
+                                whileTap="tap"
+                                transition="effect"
                             >
-                                <StyledNavLink className='sign-in upper-case' to='/auth'>Sign In</StyledNavLink>
+                                <StyledNavLink className="sign-in upper-case" to="/auth">Sign In</StyledNavLink>
                             </motion.div>
                         )
                         }
@@ -88,9 +88,9 @@ const Navigation = () => {
                     <NavigationLinksContainer>
                         <motion.div
                             variants={animaVariants}
-                            whileHover='hover'
-                            whileTap='tap'
-                            transition='effect'
+                            whileHover="hover"
+                            whileTap="tap"
+                            transition="effect"
                         >
                             <CardIcon/>
                         </motion.div>

@@ -1,4 +1,4 @@
-import {motion} from 'framer-motion';
+import {motion} from "framer-motion";
 
 import React from "react";
 
@@ -15,9 +15,9 @@ const AnimationEffectComponent = ({children}) => {
         <motion.div
             variants={animations}
             transition={{duration: .55}}
-            initial='initial'
-            animate='animate'
-            exit='exit'
+            initial="initial"
+            animate="animate"
+            exit="exit"
         >
             {children}
         </motion.div>

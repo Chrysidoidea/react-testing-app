@@ -8,7 +8,7 @@ import {
     UserMenu,
     UserMenuSector
 
-} from './user-menu.styles'
+} from "./user-menu.styles"
 
 const UserMenuComponent = () => {
     const userName = useSelector(state => state.user.currentUser.displayName)
@@ -39,7 +39,7 @@ With their help, Amelia started a local science club, and soon, the small town b
 
 <br/>       As the years passed, the town's residents started to realize the profound impact science had on their lives. They saw the benefits of clean energy, how advances in medicine improved their health, and how technology connected them with the rest of the world.
 
-One particular summer, a terrible drought struck the region. The once-lush hills turned brown, and the lake's water level dropped dangerously low. The town's farmers were in despair, as their crops withered and died. The townspeople began to lose hope.
+One particular summer, a terrible drought struck the region. The once-lush hills turned brown, and the lake"s water level dropped dangerously low. The town"s farmers were in despair, as their crops withered and died. The townspeople began to lose hope.
 
 Amelia knew that science could offer a solution. She gathered her fellow science club members and began researching ways to combat the drought. After weeks of hard work, they discovered a water-saving irrigation technique that could help the crops survive with minimal water.
 
