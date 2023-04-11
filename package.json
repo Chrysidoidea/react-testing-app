@@ -11,6 +11,7 @@
     "@testing-library/react": "^13.4.0",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
+    "@types/redux-logger": "^3.0.9",
     "dotenv": "^16.0.3",
     "eslint-config-react-app": "^7.0.1",
     "firebase": "^9.14.0",
