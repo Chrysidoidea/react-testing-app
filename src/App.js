@@ -1,6 +1,6 @@
 import {Routes, Route, useLocation} from "react-router-dom";
 import {AnimatePresence} from "framer-motion";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 
 import CartDropdown from "./components/card-dropdown/cart-dropdown.component";
@@ -17,6 +17,7 @@ import ErrorPageComponent from "./components/error-page/error-page.component";
 import CategoryItemComponent from "./components/shop/category-item/category-item.component";
 import {isUserAuthenticated} from "./store/user/user.utils";
 import {selectCartIsActive} from "./store/cart-dropdown/cart-dropdown.selector";
+import {AlertComponent} from "./components/alert/alert.component";
 
 
 const LazyShop = React.lazy(() => import("./components/shop/shop-component"));
@@ -24,20 +25,30 @@ const App = () => {
     const isActive = useSelector(selectCartIsActive);
     const dispatch = useDispatch();
     const location = useLocation();
-
-
-    useEffect(() => {
-        console.log(process.env.STRIPE_SECRET_KEY)
-    }, [])
+    const [alert, setAlert] = useState(false);
 
     useEffect(() => {
         dispatch(isUserAuthenticated())
     }, []);
 
+    useEffect(() => {
+        const time = setTimeout(() => {
+            setAlert(true);
+            return clearTimeout(time);
+        },5000);
+
+
+    }, [])
+
     return (
         <AnimatePresence wait>
             <Navigation/>
+            <AnimatePresence>
+            {alert ? <AlertComponent setAlert={setAlert}/>: null}
+            </AnimatePresence>
+            <AnimatePresence>
             {isActive ? <CartDropdown key={"cdd1"}/> : null}
+            </AnimatePresence>
             <Routes location={location} key={location.pathname}>
                 <Route index element={<Home/>}/>
                 <Route exact path="react-testing-app" element={<StartingPageComponent/>}/>

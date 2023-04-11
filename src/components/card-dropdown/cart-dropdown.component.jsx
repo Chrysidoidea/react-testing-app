@@ -16,7 +16,21 @@ import {
     CartDropdownTotalPrice
 } from "./cart-dropdown.styles"
 
-
+const variants = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: .1,
+        }
+    },
+    collapse: {
+        opacity: 0,
+        transition: {ease: "easeInOut", duration: 0.2,},
+    }
+}
 const CartDropdown = () => {
     const isActive = useSelector(selectCartIsActive);
     const cartItems = useSelector(selectCartItems);
@@ -32,6 +46,10 @@ const CartDropdown = () => {
 
     return (
         <CartDropdownContainer
+            variants={variants}
+            initial="hidden"
+            animate="visible"
+            exit="collapse"
             className={isActive ? "active" : ""}
         >
             <CartDropdownItems>
